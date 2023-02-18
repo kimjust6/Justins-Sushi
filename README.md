@@ -1,3 +1,3 @@
 # Justin's Restaurant
 
-This project was created using react
+This project was created using React, Tailwind, and Font Awesome.
