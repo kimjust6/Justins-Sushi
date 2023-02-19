@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 export default function Navbar({ fixed }) {
@@ -38,8 +39,12 @@ function getMenu() {
   return (
     <>
       <ul className="font-semibold hidden lg:flex lg:flex-row text-3xl lg:text-xl text-stone-50 select-none">
-        <li className="menu cursor-pointer px-2">Menu</li>
-        <li className="menu cursor-pointer px-2">Party Trays</li>
+        <li className="menu cursor-pointer px-2">
+          <Link to="/Menu">Menu</Link>
+        </li>
+        <li className="menu cursor-pointer px-2">
+          <Link to="/PartyTrays">Party Trays</Link>
+        </li>
       </ul>
     </>
   );
