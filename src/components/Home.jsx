@@ -10,10 +10,6 @@ const Home = () => {
           backgroundImage: `url("https://i.imgur.com/7VGIWbb.jpg")`,
         }}
       >
-        {/* <ul className="z-10 w-4/5 flex h-7/8 items-center place-content-around ">
-          <li className="">Party Tray</li>
-          <li className="">Menu</li>
-        </ul> */}
         <div className="z-10 flex h-2/5 items-end place-content-around text-stone-50 text-5xl lg:text-2xl font-semibold ">
           <div className="flex flex-col justify-between items-center h-1/3">
             <div className="select-none">

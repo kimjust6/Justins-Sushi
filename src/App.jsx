@@ -1,7 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
+import Menu from "./components/Menu";
 import Navbar from "./components/Navbar";
+import PartyTray from "./components/PartyTray";
 
 function App() {
   return (
@@ -13,6 +15,24 @@ function App() {
           element={
             <>
               <Home />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/Menu"
+          element={
+            <>
+              <Menu />
+              <Footer />
+            </>
+          }
+        />
+        <Route
+          path="/PartyTrays"
+          element={
+            <>
+              <PartyTray />
               <Footer />
             </>
           }
