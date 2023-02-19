@@ -5,7 +5,7 @@ export default function Navbar({ fixed }) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   return (
     <>
-      <nav className="relative  text-md flex items-center justify-between lg:justify-between px-2 lg:px-8 py-3 bg-stone-900 select-none">
+      <nav className="absolute w-screen text-md flex items-center justify-between lg:justify-between px-2 lg:px-8 py-3 bg-stone-900 select-none">
         {getMenu()}
         <span
           className="text-stone-50 leading-none px-4 py-1 rounded bg-transparent lg:hidden outline-none focus:outline-none cursor-pointer"
