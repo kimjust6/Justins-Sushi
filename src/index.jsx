@@ -1,8 +1,8 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
-import "./index.css";
-import App from "./App";
+import Home from "./components/Home";
 import Navbar from "./components/Navbar";
+import "./index.css";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
@@ -10,6 +10,6 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Navbar />
-    <App />
+    <Home />
   </React.StrictMode>
 );
