@@ -31,7 +31,7 @@
   box-shadow: inset 6em 0 0 0 var(--colorPrimary);
 }
 
-.title-hover{
+.title-hover {
   box-shadow: inset 0 0 0 0 var(--colorPrimary);
   color: var(--colorText);
   transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
