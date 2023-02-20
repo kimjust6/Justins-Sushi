@@ -1,4 +1,5 @@
 import React from "react";
+import uuid from "react-uuid";
 
 const PartyTray = () => {
     return (
@@ -11,3 +12,12 @@ const PartyTray = () => {
 };
 
 export default PartyTray;
+
+function renderList(list) {
+    const listItems = list.map((element) => <li key={uuid()}>{element}</li>);
+    return (
+        <>
+            <ul>{listItems}</ul>
+        </>
+    );
+}
