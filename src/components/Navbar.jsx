@@ -8,7 +8,10 @@ export default function Navbar({ isCartOpen, setIsCartOpen }) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   return (
     <>
-      <Sidebar isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
+      <Sidebar
+        isCartOpen={isCartOpen}
+        setIsCartOpen={setIsCartOpen}
+      />
       <nav className="absolute z-30 w-screen text-md flex items-center justify-between lg:justify-between px-2 lg:px-8 py-5 bg-stone-900 select-none">
         {getMenu()}
         <span
@@ -18,10 +21,11 @@ export default function Navbar({ isCartOpen, setIsCartOpen }) {
         >
           <i className="fas fa-bars"></i>
         </span>
-        <a href="/" className="font-bold text-5xl text-stone-50 title-hover">
-          <span className="outline-1 text-stone-900 title-outline">
-            Justin's{" "}
-          </span>
+        <a
+          href="/"
+          className="font-bold text-5xl text-stone-50 title-hover"
+        >
+          <span className="outline-1 text-stone-900 title-outline">Justin's </span>
           <span className="outline-1 text-stone-50 title-solid">Sushi</span>
         </a>
         <div className="text-3xl lg:text-xl text-stone-50">

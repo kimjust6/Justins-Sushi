@@ -10,7 +10,10 @@ function App() {
   const [isCartOpen, setIsCartOpen] = React.useState(false);
   return (
     <>
-      <Navbar isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
+      <Navbar
+        isCartOpen={isCartOpen}
+        setIsCartOpen={setIsCartOpen}
+      />
       <Routes>
         <Route
           path="/"
