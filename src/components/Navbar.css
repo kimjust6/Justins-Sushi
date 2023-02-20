@@ -1,7 +1,7 @@
 :root {
   --colorText: #fafaf9;
-  --colorPrimary: #292524;
-  --colorSecondary: #292524;
+  --colorPrimary: #1c1917;
+  /* --colorSecondary: #622342; */
 }
 .menu {
   box-shadow: inset 0 0 0 0 var(--colorText);
@@ -14,6 +14,39 @@
 
 .menu:hover {
   color: var(--colorPrimary);
-  box-shadow: inset 100px 0 0 0 var(--colorText);
+  box-shadow: inset 6em 0 0 0 var(--colorText);
 }
 
+.title-outline {
+  text-shadow: -1px 1px 0 var(--colorText), 1px 1px 0 var(--colorText),
+    1px -1px 0 var(--colorText), -1px -1px 0 var(--colorText);
+  transition: color 0.4s ease-in-out, text-shadow 0.4s ease-in-out;
+}
+
+.title-solid {
+  transition: color 0.5s ease-in-out, text-shadow 0.5s ease-in-out;
+}
+
+.title-hover:hover {
+  box-shadow: inset 6em 0 0 0 var(--colorPrimary);
+}
+
+.title-hover {
+  box-shadow: inset 0 0 0 0 var(--colorPrimary);
+  color: var(--colorText);
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border-radius: 0.1em;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.title-hover:hover .title-outline {
+  color: var(--colorText);
+  text-shadow: 0 0 0 0 var(--colorPrimary);
+}
+
+.title-hover:hover .title-solid {
+  color: var(--colorPrimary);
+  text-shadow: -1px 1px 0 var(--colorText), 1px 1px 0 var(--colorText),
+    1px -1px 0 var(--colorText), -1px -1px 0 var(--colorText);
+}
