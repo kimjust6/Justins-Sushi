@@ -1,12 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Sidebar from "./Sidebar";
+
 import "./Navbar.css";
 
-export default function Navbar({ fixed }) {
+export default function Navbar({ isCartOpen, setIsCartOpen }) {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   return (
     <>
-      <nav className="absolute z-50 w-screen text-md flex items-center justify-between lg:justify-between px-2 lg:px-8 py-5 bg-stone-900 select-none">
+      <Sidebar isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
+      <nav className="absolute z-30 w-screen text-md flex items-center justify-between lg:justify-between px-2 lg:px-8 py-5 bg-stone-900 select-none">
         {getMenu()}
         <span
           className="text-stone-50 leading-none px-4 py-1 rounded bg-transparent lg:hidden outline-none focus:outline-none cursor-pointer"
@@ -16,19 +19,33 @@ export default function Navbar({ fixed }) {
           <i className="fas fa-bars"></i>
         </span>
         <a href="/" className="font-bold text-5xl text-stone-50 title-hover">
-          <span class="outline-1 text-stone-900 title-outline">Justin's </span>
-          <span class="outline-1 text-stone-50 title-solid">Sushi</span>
+          <span className="outline-1 text-stone-900 title-outline">
+            Justin's{" "}
+          </span>
+          <span className="outline-1 text-stone-50 title-solid">Sushi</span>
         </a>
         <div className="text-3xl lg:text-xl text-stone-50">
-          <a href="#">
+          <a
+            href="https://www.yelp.ca/toronto"
+            target="_blank"
+            rel="noreferrer"
+          >
             <i className="px-3 py-1 fab leading-none fa-yelp border border-solid border-transparent leading-lg" />
           </a>
-          <a href="#">
+          <a
+            href="https://www.instagram.com/milklatteteas/"
+            target="_blank"
+            rel="noreferrer"
+          >
             <i className="px-3 py-1 fab leading-none fa-instagram border border-solid border-transparent leading-lg" />
           </a>
-          <a href="#">
+          <button
+            onClick={() => {
+              setIsCartOpen(!isCartOpen);
+            }}
+          >
             <i className="px-3 py-1 leading-none fas fa-cart-shopping border border-solid border-transparent leading-lg" />
-          </a>
+          </button>
         </div>
       </nav>
     </>
@@ -47,5 +64,15 @@ function getMenu() {
         </li>
       </ul>
     </>
+  );
+}
+
+function getSideBar(isCartOpen) {
+  return isCartOpen ? (
+    <>
+      <Sidebar></Sidebar>
+    </>
+  ) : (
+    <></>
   );
 }

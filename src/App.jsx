@@ -1,3 +1,4 @@
+import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
@@ -6,9 +7,10 @@ import Navbar from "./components/Navbar";
 import PartyTray from "./components/PartyTray";
 
 function App() {
+  const [isCartOpen, setIsCartOpen] = React.useState(false);
   return (
     <>
-      <Navbar />
+      <Navbar isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
       <Routes>
         <Route
           path="/"

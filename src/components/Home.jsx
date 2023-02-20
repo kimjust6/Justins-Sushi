@@ -17,7 +17,7 @@ const Home = () => {
               {/* sushi, tray, person at a time */}
             </div>
             <div className="flex justify-center">
-              <button class="outline-4 outline text-sm bg-stone-900 px-3 py-2 rounded-sm outline-stone-900 hover:bg-stone-300 hover:text-stone-900 ease-in-out duration-300 font-bold">
+              <button className="outline-4 outline text-sm bg-stone-900 px-3 py-2 rounded-sm outline-stone-900 hover:bg-stone-300 hover:text-stone-900 ease-in-out duration-300 font-bold">
                 VIEW MENU
               </button>
             </div>
