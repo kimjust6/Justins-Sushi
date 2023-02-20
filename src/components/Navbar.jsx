@@ -70,13 +70,3 @@ function getMenu() {
         </>
     );
 }
-
-function getSideBar(isCartOpen) {
-    return isCartOpen ? (
-        <>
-            <Sidebar></Sidebar>
-        </>
-    ) : (
-        <></>
-    );
-}
