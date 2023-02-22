@@ -4,13 +4,13 @@ import Sidebar from "./Sidebar";
 
 import "./Navbar.css";
 
-export default function Navbar({ isCartOpen, setIsCartOpen }) {
+export default function Navbar(props) {
     const [navbarOpen, setNavbarOpen] = React.useState(false);
     return (
         <>
             <Sidebar
-                isCartOpen={isCartOpen}
-                setIsCartOpen={setIsCartOpen}
+                isCartOpen={props.isCartOpen}
+                setIsCartOpen={props.setIsCartOpen}
             />
             <nav className="absolute z-30 w-screen text-md flex items-center justify-between lg:justify-between px-2 lg:px-8 py-5 bg-stone-900 select-none">
                 {getMenu()}
@@ -45,7 +45,7 @@ export default function Navbar({ isCartOpen, setIsCartOpen }) {
                     </a>
                     <button
                         onClick={() => {
-                            setIsCartOpen(!isCartOpen);
+                            props.setIsCartOpen(!props.isCartOpen);
                         }}
                     >
                         <i className="px-3 py-1 leading-none fas fa-cart-shopping border border-solid border-transparent leading-lg" />
