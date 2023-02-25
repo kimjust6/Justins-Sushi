@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Sidebar from "./Sidebar";
 
 import "./Navbar.css";
@@ -28,7 +28,7 @@ export default function Navbar(props) {
                     <span className="outline-1 text-stone-900 title-outline">Justin's </span>
                     <span className="outline-1 text-stone-50 title-solid">Sushi</span>
                 </a>
-                <div className="text-3xl lg:text-xl text-stone-50">
+                <div className="text-3xl lg:text-xl text-stone-50 flex">
                     <a
                         href="https://www.yelp.ca/toronto"
                         target="_blank"
@@ -61,10 +61,10 @@ function getMenu() {
         <>
             <ul className="font-semibold hidden lg:flex lg:flex-row text-3xl lg:text-xl text-stone-50 select-none">
                 <li className="menu cursor-pointer px-2">
-                    <Link to="/Menu">Menu</Link>
+                    <NavLink to="/Menu">Menu</NavLink>
                 </li>
                 <li className="menu cursor-pointer px-2">
-                    <Link to="/PartyTrays">Party Trays</Link>
+                    <NavLink to="/PartyTrays">Party Trays</NavLink>
                 </li>
             </ul>
         </>

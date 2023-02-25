@@ -49,4 +49,13 @@
     color: var(--colorPrimary);
     text-shadow: -1px 1px 0 var(--colorText), 1px 1px 0 var(--colorText),
         1px -1px 0 var(--colorText), -1px -1px 0 var(--colorText);
+    border-bottom: 0;
+}
+
+.active {
+    border-bottom: 0.2em solid;
+}
+
+.active:hover{
+    border-bottom: 0em;
 }
