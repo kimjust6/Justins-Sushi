@@ -1,7 +1,28 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import uuid from "react-uuid";
+
+const data = require("../public/constants.json");
 
 const TopMenuNavBar = (props) => {
+    const getMenus = data.Navigation.map((navbarMenu) => {
+        return (
+            <li
+                key={uuid()}
+                className="menu text-center cursor-pointer px-2"
+            >
+                <NavLink
+                    to={navbarMenu.route}
+                    onClick={() => {
+                        props.setNavbarOpen(false);
+                    }}
+                >
+                    {navbarMenu.linkName}
+                </NavLink>
+            </li>
+        );
+    });
+
     return (
         <>
             <main
@@ -19,28 +40,9 @@ const TopMenuNavBar = (props) => {
                             (props.navbarOpen ? " translate-y-0 " : " -translate-y-full ")
                         }
                     >
-                        <article className=" relative w-screen mt-20 pb-10 flex flex-col items-center overflow-y-hidden  ">
+                        <article className=" relative w-screen mt-20 pt-2 pb-3 flex flex-col items-center overflow-y-hidden  ">
                             <ul className="font-semibold text-3xl text-stone-50 select-none">
-                                <li className="menu cursor-pointer px-2">
-                                    <NavLink
-                                        to="/Menu"
-                                        onClick={() => {
-                                            props.setNavbarOpen(false);
-                                        }}
-                                    >
-                                        Menu
-                                    </NavLink>
-                                </li>
-                                <li className="menu cursor-pointer px-2">
-                                    <NavLink
-                                        to="/PartyTrays"
-                                        onClick={() => {
-                                            props.setNavbarOpen(false);
-                                        }}
-                                    >
-                                        Party Trays
-                                    </NavLink>
-                                </li>
+                                {getMenus}
                             </ul>
                         </article>
                     </section>
