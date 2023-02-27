@@ -1,25 +1,30 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+
 import Sidebar from "./Sidebar";
+import TopMenuNavBar from "./TopMenuBar";
 
 import "./Navbar.css";
 
 export default function Navbar(props) {
-    const [navbarOpen, setNavbarOpen] = React.useState(false);
     return (
         <>
             <Sidebar
                 isCartOpen={props.isCartOpen}
                 setIsCartOpen={props.setIsCartOpen}
             />
+            <TopMenuNavBar
+                navbarOpen={props.navbarOpen}
+                setNavbarOpen={props.setNavbarOpen}
+            />
             <nav className="absolute z-30 w-screen text-md flex items-center justify-between lg:justify-between px-2 lg:px-8 py-5 bg-stone-900 select-none">
-                {getMenu()}
+                {getDesktopMenu()}
                 <span
                     className="text-stone-50 leading-none px-4 py-1 rounded bg-transparent lg:hidden outline-none focus:outline-none cursor-pointer"
                     type="button"
-                    onClick={() => setNavbarOpen(!navbarOpen)}
+                    onClick={() => props.setNavbarOpen(!props.navbarOpen)}
                 >
-                    <i className="fas fa-bars"></i>
+                    <i className={props.navbarOpen ? "fa-solid fa-x" : "fas fa-bars"}></i>
                 </span>
                 <a
                     href="/"
@@ -30,7 +35,7 @@ export default function Navbar(props) {
                 </a>
                 <div className="text-3xl lg:text-xl text-stone-50 flex">
                     <a
-                        href="https://www.yelp.ca/toronto"
+                        href="https://www.yelp.ca/toronto/"
                         target="_blank"
                         rel="noreferrer"
                     >
@@ -56,7 +61,7 @@ export default function Navbar(props) {
     );
 }
 
-function getMenu() {
+function getDesktopMenu() {
     return (
         <>
             <ul className="font-semibold hidden lg:flex lg:flex-row text-3xl lg:text-xl text-stone-50 select-none">

@@ -8,11 +8,14 @@ import PartyTray from "./components/PartyTray";
 
 function App() {
     const [isCartOpen, setIsCartOpen] = React.useState(false);
+    const [navbarOpen, setNavbarOpen] = React.useState(false);
     return (
         <>
             <Navbar
                 isCartOpen={isCartOpen}
                 setIsCartOpen={setIsCartOpen}
+                navbarOpen={navbarOpen}
+                setNavbarOpen={setNavbarOpen}
             />
             <Routes>
                 <Route
