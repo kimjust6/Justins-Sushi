@@ -25,13 +25,15 @@ const PartyTray = () => {
             Title: "Chef's Choice B",
             Image: "https://i.imgur.com/XaAUHLE.jpg",
             Alt: "Sushi tray",
-            Description: "",
+            Description:
+                "california, dynamite, aburi salmon. chef’s choice assorted raw sushi 28 pcs",
         },
         {
             Title: "Chef's Choice C",
             Image: "https://i.imgur.com/URzFrp1.jpg",
             Alt: "Sushi tray",
-            Description: "",
+            Description:
+                "california, dynamite, aburi salmon, green dragon. chef’s choice assorted raw sushi 40 pcs",
         },
         {
             Title: "Sushi A",
@@ -71,16 +73,21 @@ const PartyTray = () => {
             Title: "Jumbo Roll Tray",
             Image: "https://i.imgur.com/fQ6FBNy.png",
             Alt: "Sushi tray",
-            Description: "2*california, salmon and avocado, yam tempura roll, spicy yam tempura roll, spicy salmon, spicy tuna, spicy crabmeat, crabmeat tempura roll, avocado and cucumber, dynamite, aburi salmon roll, green dragon, double spicy salmon, rainbow dragon. *must placing this tray before 1 hours from your pick up time. *cannot modify any rolls. *limited : 1 tray per 1 person",
+            Description:
+                "2*california, salmon and avocado, yam tempura roll, spicy yam tempura roll, spicy salmon, spicy tuna, spicy crabmeat, crabmeat tempura roll, avocado and cucumber, dynamite, aburi salmon roll, green dragon, double spicy salmon, rainbow dragon. *must placing this tray before 1 hours from your pick up time. *cannot modify any rolls. *limited : 1 tray per 1 person",
         },
     ];
 
     return (
         <>
-            <h2 className="flex justify-center items-center ">Party Trays</h2>
-            <ul className="z-10 mt-24 flex w-100 flex-wrap justify-around items-center  ">
-                {renderList(list)}
-            </ul>
+            <div className="flex flex-col items-center">
+                <h2 className="flex justify-center items-center text-4xl font-bold mt-36 py-4 mb-6">
+                    Party Trays
+                </h2>
+                <ul className="z-10 flex flex-wrap justify-center items-center">
+                    {renderList(list)}
+                </ul>
+            </div>
         </>
     );
 };
@@ -90,10 +97,10 @@ export default PartyTray;
 function renderList(list) {
     const listItems = list.map((element) => (
         <li key={uuid()}>
-            <div className="max-w-xl bg-white border border-gray-200 rounded-lg shadow dark:bg-stone-900 dark:border-stone-900">
+            <div className="lg:max-w-2xl mb-10 bg-white border border-gray-200 rounded-lg shadow dark:bg-stone-900 dark:border-stone-900 mx-5">
                 <a href="#">
                     <img
-                        className="rounded-t-lg"
+                        className="rounded-t-lg min-w-2xl"
                         src={element?.Image}
                         alt={element?.Alt}
                     />
