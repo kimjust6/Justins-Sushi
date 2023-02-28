@@ -8,18 +8,24 @@ const PartyTray = () => {
             Image: "https://i.imgur.com/z3gQyeY.jpg",
             Alt: "Sushi tray",
             Description: "Chef’s choice of assorted raw sashimi, 24 pieces.",
+            Price: "37",
+            Pieces: "24",
         },
         {
             Title: "Sashimi B",
             Image: "https://i.imgur.com/nuGuXl3.jpg",
             Alt: "Sushi tray",
             Description: "chef’s choice assorted raw sashimi 45 pcs",
+            Price: "65",
+            Pieces: "45",
         },
         {
             Title: "Chef's Choice A",
             Image: "https://i.imgur.com/521CBJF.jpg",
             Alt: "Description of Image",
             Description: "california, dynamite, chef’s choice assorted raw sushi 14 pcs",
+            Price: "29",
+            Pieces: "28",
         },
         {
             Title: "Chef's Choice B",
@@ -27,6 +33,8 @@ const PartyTray = () => {
             Alt: "Sushi tray",
             Description:
                 "california, dynamite, aburi salmon. chef’s choice assorted raw sushi 28 pcs",
+            Price: "49",
+            Pieces: "50",
         },
         {
             Title: "Chef's Choice C",
@@ -34,18 +42,24 @@ const PartyTray = () => {
             Alt: "Sushi tray",
             Description:
                 "california, dynamite, aburi salmon, green dragon. chef’s choice assorted raw sushi 40 pcs",
+            Price: "69",
+            Pieces: "70",
         },
         {
             Title: "Sushi A",
             Image: "https://i.imgur.com/6xZ8hxV.png",
             Alt: "Sushi tray",
             Description: "chef’s choice assorted raw sushi 24 pcs",
+            Price: "33",
+            Pieces: "24",
         },
         {
             Title: "Sushi B",
             Image: "https://i.imgur.com/NkS9wh7.jpg",
             Alt: "Sushi tray",
             Description: "chef’s choice assorted raw sushi 45 pcs",
+            Price: "59",
+            Pieces: "45",
         },
 
         {
@@ -54,6 +68,8 @@ const PartyTray = () => {
             Alt: "Sushi tray",
             Description:
                 "california, salmon and avocado, dynamite, aburi salmon, chef’s choice aburi sushi 6 pcs.",
+            Price: "27",
+            Pieces: "34",
         },
         {
             Title: "Roll Tray Medium",
@@ -61,6 +77,8 @@ const PartyTray = () => {
             Alt: "Sushi tray",
             Description:
                 "California, salmon and avocado, yam, dynamite, aburi salmon, green dragon, double spicy salmon, chef’s choice aburi sushi 10 pcs. ",
+            Price: "45",
+            Pieces: "60",
         },
         {
             Title: "Roll Tray Large",
@@ -68,6 +86,8 @@ const PartyTray = () => {
             Alt: "Sushi tray",
             Description:
                 "California, salmon and avocado, yam, spicy salmon, dynamite, aburi salmon, green dragon, double spicy salmon, Philadelphia, chef’s choice aburi sushi 18 pcs. ",
+            Price: "59",
+            Pieces: "82",
         },
         {
             Title: "Jumbo Roll Tray",
@@ -75,6 +95,8 @@ const PartyTray = () => {
             Alt: "Sushi tray",
             Description:
                 "2*california, salmon and avocado, yam tempura roll, spicy yam tempura roll, spicy salmon, spicy tuna, spicy crabmeat, crabmeat tempura roll, avocado and cucumber, dynamite, aburi salmon roll, green dragon, double spicy salmon, rainbow dragon. *must placing this tray before 1 hours from your pick up time. *cannot modify any rolls. *limited : 1 tray per 1 person",
+            Price: "65",
+            Pieces: "100",
         },
     ];
 
