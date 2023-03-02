@@ -1,13 +1,13 @@
 import React from "react";
 
-const Menu = () => {
+const NotFound = () => {
     return (
         <>
             <ul className="z-10 h-screen w-screen flex justify-center items-center place-content-around ">
-                <li className="">Menu</li>
+                <li className="">404 page not found</li>
             </ul>
         </>
     );
 };
 
-export default Menu;
+export default NotFound;
