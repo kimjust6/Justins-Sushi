@@ -1,9 +1,9 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { decrement, increment } from "../state/counterslice";
+import { decrement, increment } from "../state/cartSlice";
 
 const Sidebar = (props) => {
-    const cartTotal = useSelector((state) => state.counter.value);
+    const cartTotal = useSelector((state) => state.cart.value);
     const dispatch = useDispatch();
 
     return (
@@ -24,19 +24,19 @@ const Sidebar = (props) => {
                 >
                     <article className="relative w-screen max-w-lg pb-10 flex flex-col space-y-6 overflow-y-scroll h-full">
                         <div>
-                            <div>
+                            <div className="pb-2">
                                 <button
-                                    aria-label="Increment Value"
-                                    onClick={() => dispatch(increment())}
-                                >
-                                    Increment
-                                </button>
-                                <span>{cartTotal}</span>
-                                <button
-                                    aria-label="Decrement Value"
+                                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                                     onClick={() => dispatch(decrement())}
                                 >
                                     Decrement
+                                </button>
+                                <span>{cartTotal}</span>
+                                <button
+                                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                                    onClick={() => dispatch(increment())}
+                                >
+                                    Increment
                                 </button>
                             </div>
                         </div>
