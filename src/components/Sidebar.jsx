@@ -1,9 +1,23 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { decrement, increment } from "../state/cartSlice";
+import uuid from "react-uuid";
+import {
+    increment,
+    decrement,
+    incrementByAmount,
+    addToCart,
+    decrementFromCart,
+    deleteFromCart,
+    emptyCart,
+} from "../state/cartSlice";
 
 const Sidebar = (props) => {
-    const cartTotal = useSelector((state) => state.cart.value);
+    // const product = useSelector((state) => state.cart.product);
+    // const cartTotal = useSelector((state) => state.cart.quantity);
+    // const description = useSelector((state) => state.cart.description);
+    // const price = useSelector((state) => state.cart.price);
+
+    const cart = useSelector((state) => state.cart);
     const dispatch = useDispatch();
 
     return (
@@ -27,17 +41,68 @@ const Sidebar = (props) => {
                             <div className="pb-2">
                                 <button
                                     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                                    onClick={() =>
+                                        dispatch(
+                                            addToCart({
+                                                id: 1,
+                                                price: 69.99,
+                                                description: "Memory",
+                                            })
+                                        )
+                                    }
+                                >
+                                    Add 1 Cart
+                                </button>
+                                <button
+                                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                                    onClick={() =>
+                                        dispatch(
+                                            addToCart({
+                                                id: 2,
+                                                price: 420.69,
+                                                description: "cpu",
+                                            })
+                                        )
+                                    }
+                                >
+                                    Add 2 Cart
+                                </button>
+                                <button
+                                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                                    onClick={() =>
+                                        dispatch(
+                                            deleteFromCart({
+                                                id: 2,
+                                                price: 420.69,
+                                                description: "cpu",
+                                            })
+                                        )
+                                    }
+                                >
+                                    Delete 2
+                                </button>
+                                <span>
+                                    {cart.map((element) => {
+                                        return (
+                                            <div key={uuid()}>
+                                                {element?.description} {element?.price}
+                                            </div>
+                                        );
+                                    })}
+                                </span>
+                                {/* <button
+                                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                                     onClick={() => dispatch(decrement())}
                                 >
                                     Decrement
                                 </button>
-                                <span>{cartTotal}</span>
+
                                 <button
                                     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
                                     onClick={() => dispatch(increment())}
                                 >
                                     Increment
-                                </button>
+                                </button> */}
                             </div>
                         </div>
                     </article>
