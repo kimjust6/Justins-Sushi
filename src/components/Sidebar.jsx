@@ -1,6 +1,11 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { decrement, increment } from "../state/counterslice";
 
 const Sidebar = (props) => {
+    const cartTotal = useSelector((state) => state.counter.value);
+    const dispatch = useDispatch();
+
     return (
         <>
             <main
@@ -18,8 +23,23 @@ const Sidebar = (props) => {
                     }
                 >
                     <article className="relative w-screen max-w-lg pb-10 flex flex-col space-y-6 overflow-y-scroll h-full">
-                        <header className="p-4 font-bold text-lg">Header</header>
-                        Cart
+                        <div>
+                            <div>
+                                <button
+                                    aria-label="Increment Value"
+                                    onClick={() => dispatch(increment())}
+                                >
+                                    Increment
+                                </button>
+                                <span>{cartTotal}</span>
+                                <button
+                                    aria-label="Decrement Value"
+                                    onClick={() => dispatch(decrement())}
+                                >
+                                    Decrement
+                                </button>
+                            </div>
+                        </div>
                     </article>
                 </section>
                 <section
