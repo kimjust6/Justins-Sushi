@@ -21,38 +21,20 @@ export const cartSlice = createSlice({
         },
 
         addToCart: (state, action) => {
-            state.push(action.payload);
-            // var index = state.id.findIndex((element) => {
-            //     console.log(element)
-            //     return element === action.payload.id;
-            // });
-            // // console.log(index);
-            // if (index < 0) {
-            //     state.id.push(action.payload.productID);
-            //     state.price.push(action.payload.price);
-            //     state.description.push(action.payload.description);
-            //     state.quantity.push(1);
-            // } else {
-            //     state.quantity[index]++;
-            // }
+            var item = state.filter((element) => element.id === action.payload.id);
+            if (item.length === 0) {
+                action.payload.quantity = 1;
+                state.push(action.payload);
+            } else {
+                (item[0].quantity += 1);
+            }
         },
 
         decrementFromCart: (state, action) => {
-            // var temp = state.value.find(
-            //     (element) => element.productID === action.payload.productID
-            // );
-            // temp.itemCount--;
-            // if (temp.itemCount <= 0) {
-            //     state.value = state.value.filter(
-            //         (element) => element.productID !== action.payload.productID
-            //     );
-            // }
-            // state.value[action.payload.productID].itemCount =
-            //     state.value[action.payload.productID]?.itemCount - 1 ?? 0;
+            
         },
 
         deleteFromCart: (state, action) => {
-            // state.value[action.payload.productID] = 0;
             return state.filter((element) => element.id !== action.payload.id);
         },
 
