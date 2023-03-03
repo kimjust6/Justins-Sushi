@@ -85,7 +85,7 @@ const Sidebar = (props) => {
                                     {cart.map((element) => {
                                         return (
                                             <div key={uuid()}>
-                                                {element?.description} {element?.price}
+                                                {element?.description} {element?.price} {element?.quantity}
                                             </div>
                                         );
                                     })}
