@@ -7,15 +7,6 @@ export const cartSlice = createSlice({
     name: "cart",
     initialState,
     reducers: {
-        increment: (state) => {
-            console.log(state);
-            state.value += 1;
-        },
-
-        decrement: (state) => {
-            state.value -= 1;
-        },
-
         incrementByAmount: (state, action) => {
             state.value = action.payload;
         },
@@ -46,8 +37,6 @@ export const cartSlice = createSlice({
 
 // Action creators are generated for each case reducer function
 export const {
-    increment,
-    decrement,
     incrementByAmount,
     addToCart,
     decrementFromCart,
