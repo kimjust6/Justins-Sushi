@@ -6,6 +6,8 @@ import Menu from "./components/Menu";
 import Navbar from "./components/Navbar";
 import PartyTray from "./components/PartyTray";
 
+import "./App.css"
+
 function App() {
     const [isCartOpen, setIsCartOpen] = React.useState(false);
     const [navbarOpen, setNavbarOpen] = React.useState(false);

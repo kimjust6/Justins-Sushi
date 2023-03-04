@@ -12,7 +12,7 @@ const data = require("../public/constants.json");
 export default function Navbar(props) {
     const getMenus = (
         <>
-            <ul className="font-semibold hidden lg:flex lg:flex-row text-3xl lg:text-xl text-stone-50 select-none">
+            <ul className=" font-semibold hidden lg:flex lg:flex-row text-3xl lg:text-xl text-stone-50 select-none">
                 {data.Navigation.map((navigation) => {
                     return (
                         <li
@@ -37,7 +37,7 @@ export default function Navbar(props) {
                 navbarOpen={props.navbarOpen}
                 setNavbarOpen={props.setNavbarOpen}
             />
-            <nav className="absolute z-30 w-screen text-md flex items-center justify-between lg:justify-between px-2 lg:px-8 py-5 bg-stone-900 select-none">
+            <nav className=" outline-1 outline outline-stone-400 absolute z-30 w-screen text-md flex items-center justify-between lg:justify-between px-2 lg:px-8 py-5 bg-stone-900 select-none">
                 {getMenus}
                 <span
                     className="text-stone-50 leading-none px-4 py-1 rounded bg-transparent lg:hidden outline-none focus:outline-none cursor-pointer"
