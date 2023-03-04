@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 // import { product } from "../interface/interface";
 
-const initialState = [];
+const initialState = [{ quantity: 1, description: "Sashimi B", price: "65" }];
 
 export const cartSlice = createSlice({
     name: "cart",
@@ -17,31 +17,26 @@ export const cartSlice = createSlice({
                 action.payload.quantity = 1;
                 state.push(action.payload);
             } else {
-                (item[0].quantity += 1);
+                item[0].quantity += 1;
             }
         },
 
-        decrementFromCart: (state, action) => {
-            
-        },
+        decrementFromCart: (state, action) => {},
 
         deleteFromCart: (state, action) => {
-            return state.filter((element) => element.id !== action.payload.id);
+            return state.filter((element) => {
+                return element.id !== action.payload.id;
+            });
         },
 
         emptyCart: (state) => {
-            // state.value = {};
+            return [];
         },
     },
 });
 
 // Action creators are generated for each case reducer function
-export const {
-    incrementByAmount,
-    addToCart,
-    decrementFromCart,
-    deleteFromCart,
-    emptyCart,
-} = cartSlice.actions;
+export const { incrementByAmount, addToCart, decrementFromCart, deleteFromCart, emptyCart } =
+    cartSlice.actions;
 
 export default cartSlice.reducer;

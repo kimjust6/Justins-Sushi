@@ -36,12 +36,12 @@ const TopMenuNavBar = (props) => {
                 <div className="flex">
                     <section
                         className={
-                            " w-screen h-fit absolute bg-stone-900 h-full shadow-xl duration-300 ease-in-out transition-all transform  " +
+                            " w-screen h-fit absolute bg-stone-900  shadow-xl duration-300 ease-in-out transition-all transform  " +
                             (props.navbarOpen ? " translate-y-0 " : " -translate-y-full ")
                         }
                     >
                         <article className=" relative w-screen mt-20 pt-2 pb-3 flex flex-col items-center overflow-y-hidden  ">
-                            <ul className="font-semibold text-3xl text-stone-50 select-none">
+                            <ul className="font-semibold text-3xl text-stone-50 select-none py-3">
                                 {getMenus}
                             </ul>
                         </article>
