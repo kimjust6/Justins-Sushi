@@ -5,8 +5,9 @@ import Home from "./components/Home";
 import Menu from "./components/Menu";
 import Navbar from "./components/Navbar";
 import PartyTray from "./components/PartyTray";
+import NotFound from "./components/NotFound";
 
-import "./App.css"
+import "./App.css";
 
 function App() {
     const [isCartOpen, setIsCartOpen] = React.useState(false);
@@ -47,7 +48,14 @@ function App() {
                         </>
                     }
                 />
-                <Route></Route>
+                <Route
+                    path="*"
+                    element={
+                        <>
+                            <NotFound />
+                        </>
+                    }
+                ></Route>
             </Routes>
         </>
     );
