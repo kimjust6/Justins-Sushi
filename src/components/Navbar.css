@@ -53,9 +53,22 @@
 }
 
 .active {
-    border-bottom: 0.2em solid;
+    /* border-bottom: 0.2em solid; */
+    border: 1px solid;
+    border-radius: 0.1em;
 }
 
-.active:hover{
+.active:hover {
     border-bottom: 0em;
+    border-color: black;
+}
+
+.menu a {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.menu a:hover {
+    color: var(--colorPrimary);
+    box-shadow: inset 6em 0 0 0 var(--colorText);
 }
