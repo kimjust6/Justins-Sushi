@@ -60,7 +60,7 @@ const Menu = () => {
         },
         {
             Title: "Atlantic Salmon Teriyaki Dinner",
-            Image: "https://i.imgur.com/Sd70pt3.jpg",
+            Image: "https://i.imgur.com/CsYuV1M.jpg",
             Alt: "Menu Item",
             Description: "Atlantic salmon grilled with teriyaki sauce",
             Price: "29",
@@ -74,6 +74,24 @@ const Menu = () => {
             Description: "Salmon sushi boat",
             Price: "27",
             Pieces: "15",
+            ID: "6",
+        },
+        {
+            Title: "Salmon Sushi Lover Small",
+            Image: "https://i.imgur.com/0S5QH0Y.jpg",
+            Alt: "Menu Item",
+            Description: "Salmon sushi small",
+            Price: "27",
+            Pieces: "6",
+            ID: "6",
+        },
+        {
+            Title: "Salmon Sushi Lover Large",
+            Image: "https://i.imgur.com/0S5QH0Y.jpg",
+            Alt: "Menu Item",
+            Description: "Salmon sushi large",
+            Price: "27",
+            Pieces: "12",
             ID: "6",
         },
     ];
