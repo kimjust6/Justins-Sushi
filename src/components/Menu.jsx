@@ -86,12 +86,12 @@ const Menu = () => {
             ID: "6",
         },
         {
-            Title: "Salmon Sushi Lover Large",
-            Image: "https://i.imgur.com/0S5QH0Y.jpg",
+            Title: "Salmon - Holic Combo",
+            Image: "https://i.imgur.com/kO9G4XY.jpg",
             Alt: "Menu Item",
-            Description: "Salmon sushi large",
-            Price: "27",
-            Pieces: "12",
+            Description: "Soup, salad, 4pcs salmon sushi, 6pcs salmon sashimi, 8pcs super salmon",
+            Price: "31",
+            Pieces: "18",
             ID: "6",
         },
     ];
