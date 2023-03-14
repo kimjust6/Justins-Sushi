@@ -41,7 +41,7 @@ const Menu = () => {
             ID: "4",
         },
         {
-            Title: "Kalbi Appetizer (6pcs)",
+            Title: "Kalbi Appetizer (6 pieces)",
             Image: "https://i.imgur.com/01aOa08.jpg",
             Alt: "Menu Item",
             Description: "Korean BBQ rips",
@@ -89,7 +89,7 @@ const Menu = () => {
             Title: "Salmon - Holic Combo",
             Image: "https://i.imgur.com/kO9G4XY.jpg",
             Alt: "Menu Item",
-            Description: "Soup, salad, 4pcs salmon sushi, 6pcs salmon sashimi, 8pcs super salmon",
+            Description: "Soup, salad, 4 pieces salmon sushi, 6 pieces salmon sashimi, 8 pieces super salmon",
             Price: "31",
             Pieces: "18",
             ID: "6",

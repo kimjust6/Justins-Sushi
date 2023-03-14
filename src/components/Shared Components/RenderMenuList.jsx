@@ -19,7 +19,7 @@ export function RenderList(list) {
     const listItems = list.map((element) => (
         <li
             key={uuid()}
-            className="menuItem"
+            className=" menuItem cursor-pointer "
         >
             <div className=" lg:max-w-md mb-10 bg-white border border-gray-200 rounded-lg shadow dark:bg-stone-900 dark:border-stone-900 mx-5">
                 <div className="  ">
@@ -38,7 +38,7 @@ export function RenderList(list) {
                     <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                         {element?.Description}
                     </p>
-                    <a
+                    {/* <a
                         className="  cursor-pointer prevent-select inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-yellow-700 dark:hover:bg-yellow-600 dark:focus:ring-blue-800"
                         onClick={() => {
                             dispatch(
@@ -51,7 +51,7 @@ export function RenderList(list) {
                         }}
                     >
                         Add to Cart
-                    </a>
+                    </a> */}
                 </div>
             </div>
         </li>
