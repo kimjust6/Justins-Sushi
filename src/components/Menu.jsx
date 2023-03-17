@@ -89,7 +89,8 @@ const Menu = () => {
             Title: "Salmon - Holic Combo",
             Image: "https://i.imgur.com/kO9G4XY.jpg",
             Alt: "Menu Item",
-            Description: "Soup, salad, 4 pieces salmon sushi, 6 pieces salmon sashimi, 8 pieces super salmon",
+            Description:
+                "Soup, salad, 4 pieces salmon sushi, 6 pieces salmon sashimi, 8 pieces super salmon",
             Price: "31",
             Pieces: "18",
             ID: "6",

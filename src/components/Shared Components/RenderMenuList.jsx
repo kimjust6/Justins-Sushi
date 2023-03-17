@@ -1,6 +1,8 @@
 import React from "react";
 import uuid from "react-uuid";
 import { useSelector, useDispatch } from "react-redux";
+import { addToCartModal } from "./CartModal";
+
 import {
     incrementByAmount,
     addToCart,
@@ -15,7 +17,7 @@ export function RenderList(list) {
     // define cart and dispatch for redux
     const cart = useSelector((state) => state.cart);
     const dispatch = useDispatch();
-
+    const isModalOpen = true;
     const listItems = list.map((element) => (
         <li
             key={uuid()}
@@ -59,6 +61,7 @@ export function RenderList(list) {
     return (
         <>
             {/* <div className="flex flex-col"></div> */}
+            {isModalOpen} && {addToCartModal()}
             {listItems}
         </>
     );
