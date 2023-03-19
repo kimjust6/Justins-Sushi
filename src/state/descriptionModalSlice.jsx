@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = [];
+const initialState = { isOpen: false };
 
 export const descriptionModal = createSlice({
     name: "menuItemModal",
@@ -8,11 +8,16 @@ export const descriptionModal = createSlice({
     reducers: {
         setModal(state, action) {
             state.value = action.payload;
+            state.isOpen = true;
+        },
+        clearModal(state, action) {
+            state.value = {}
+            state.isOpen = false;
         },
     },
 });
 
 // Action creators are generated for each case reducer function
-export const { setModal } = descriptionModal.actions;
+export const { setModal, clearModal } = descriptionModal.actions;
 
 export default descriptionModal.reducer;

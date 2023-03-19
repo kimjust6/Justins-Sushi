@@ -1,7 +1,6 @@
 import React from "react";
 import uuid from "react-uuid";
 import { useSelector, useDispatch } from "react-redux";
-import { addToCartModal } from "./CartModal";
 
 import {
     incrementByAmount,
@@ -11,17 +10,23 @@ import {
     emptyCart,
 } from "../../state/cartSlice";
 
+import { setModal } from "../../state/descriptionModalSlice";
+import { foodDescriptionModal } from "./CartModal";
+
 import "./RenderMenuList.css";
 
 export function RenderList(list) {
     // define cart and dispatch for redux
     const cart = useSelector((state) => state.cart);
+    // const descriptionModal = useSelector((state) => state.menuItemModal);
     const dispatch = useDispatch();
-    const isModalOpen = true;
     const listItems = list.map((element) => (
         <li
             key={uuid()}
             className=" menuItem cursor-pointer "
+            onClick={() => {
+                dispatch(setModal(element));
+            }}
         >
             <div className=" lg:max-w-md mb-10 bg-white border border-gray-200 rounded-lg shadow dark:bg-stone-900 dark:border-stone-900 mx-5">
                 <div className="  ">
@@ -60,8 +65,7 @@ export function RenderList(list) {
     ));
     return (
         <>
-            {/* <div className="flex flex-col"></div> */}
-            {isModalOpen} && {addToCartModal()}
+            {useSelector((state) => state.menuItemModal)?.isOpen && foodDescriptionModal(dispatch)}
             {listItems}
         </>
     );
