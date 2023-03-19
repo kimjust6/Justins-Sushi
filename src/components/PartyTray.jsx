@@ -9,13 +9,15 @@ import {
     emptyCart,
 } from "../state/cartSlice";
 
+import { RenderList } from "./Shared Components/RenderMenuList";
+
 const PartyTray = () => {
     const list = [
         {
             Title: "Sashimi A",
             Image: "https://i.imgur.com/z3gQyeY.jpg",
             Alt: "Sushi tray",
-            Description: "Chef’s choice of assorted raw sashimi, 24 pieces.",
+            Description: "Chef's choice of assorted raw sashimi, 24 pieces.",
             Price: "37",
             Pieces: "24",
             ID: "1",
@@ -24,7 +26,7 @@ const PartyTray = () => {
             Title: "Sashimi B",
             Image: "https://i.imgur.com/nuGuXl3.jpg",
             Alt: "Sushi tray",
-            Description: "chef’s choice assorted raw sashimi 45 pcs",
+            Description: "Chef's choice assorted raw sashimi 45 pieces.",
             Price: "65",
             Pieces: "45",
             ID: "2",
@@ -33,7 +35,7 @@ const PartyTray = () => {
             Title: "Chef's Choice A",
             Image: "https://i.imgur.com/521CBJF.jpg",
             Alt: "Description of Image",
-            Description: "california, dynamite, chef’s choice assorted raw sushi 14 pcs",
+            Description: "California, dynamite, chef's choice assorted raw sushi 14 pieces.",
             Price: "29",
             Pieces: "28",
             ID: "3",
@@ -43,7 +45,7 @@ const PartyTray = () => {
             Image: "https://i.imgur.com/XaAUHLE.jpg",
             Alt: "Sushi tray",
             Description:
-                "california, dynamite, aburi salmon. chef’s choice assorted raw sushi 28 pcs",
+                "California, dynamite, aburi salmon. chef's choice assorted raw sushi 28 pieces.",
             Price: "49",
             Pieces: "50",
             ID: "4",
@@ -53,7 +55,7 @@ const PartyTray = () => {
             Image: "https://i.imgur.com/URzFrp1.jpg",
             Alt: "Sushi tray",
             Description:
-                "california, dynamite, aburi salmon, green dragon. chef’s choice assorted raw sushi 40 pcs",
+                "California, dynamite, aburi salmon, green dragon. chef's choice assorted raw sushi 40 pieces.",
             Price: "69",
             Pieces: "70",
             ID: "5",
@@ -62,7 +64,7 @@ const PartyTray = () => {
             Title: "Sushi A",
             Image: "https://i.imgur.com/6xZ8hxV.png",
             Alt: "Sushi tray",
-            Description: "chef’s choice assorted raw sushi 24 pcs",
+            Description: "Chef's choice assorted raw sushi 24 pieces.",
             Price: "33",
             Pieces: "24",
         },
@@ -70,7 +72,7 @@ const PartyTray = () => {
             Title: "Sushi B",
             Image: "https://i.imgur.com/NkS9wh7.jpg",
             Alt: "Sushi tray",
-            Description: "chef’s choice assorted raw sushi 45 pcs",
+            Description: "Chef's choice assorted raw sushi 45 pieces.",
             Price: "59",
             Pieces: "45",
             ID: "6",
@@ -81,7 +83,7 @@ const PartyTray = () => {
             Image: "https://i.imgur.com/HhO9nyt.jpg",
             Alt: "Sushi tray",
             Description:
-                "california, salmon and avocado, dynamite, aburi salmon, chef’s choice aburi sushi 6 pcs.",
+                "California, salmon and avocado, dynamite, aburi salmon, chef's choice aburi sushi 6 pieces.",
             Price: "27",
             Pieces: "34",
             ID: "7",
@@ -91,7 +93,7 @@ const PartyTray = () => {
             Image: "https://i.imgur.com/5IfjCVG.jpg",
             Alt: "Sushi tray",
             Description:
-                "California, salmon and avocado, yam, dynamite, aburi salmon, green dragon, double spicy salmon, chef’s choice aburi sushi 10 pcs. ",
+                "California, salmon and avocado, yam, dynamite, aburi salmon, green dragon, double spicy salmon, chef's choice aburi sushi 10 pieces. ",
             Price: "45",
             Pieces: "60",
             ID: "8",
@@ -101,7 +103,7 @@ const PartyTray = () => {
             Image: "https://i.imgur.com/4Me4faW.jpg",
             Alt: "Sushi tray",
             Description:
-                "California, salmon and avocado, yam, spicy salmon, dynamite, aburi salmon, green dragon, double spicy salmon, Philadelphia, chef’s choice aburi sushi 18 pcs. ",
+                "California, salmon and avocado, yam, spicy salmon, dynamite, aburi salmon, green dragon, double spicy salmon, Philadelphia, chef's choice aburi sushi 18 pieces. ",
             Price: "59",
             Pieces: "82",
             ID: "9",
@@ -133,53 +135,3 @@ const PartyTray = () => {
 };
 
 export default PartyTray;
-
-function RenderList(list) {
-    // define cart and dispatch for redux
-    const cart = useSelector((state) => state.cart);
-    const dispatch = useDispatch();
-
-    const listItems = list.map((element) => (
-        <li key={uuid()}>
-            <div className="lg:max-w-2xl mb-10 bg-white border border-gray-200 rounded-lg shadow dark:bg-stone-900 dark:border-stone-900 mx-5">
-                <a>
-                    <img
-                        className="rounded-t-lg min-w-2xl"
-                        src={element?.Image}
-                        alt={element?.Alt}
-                    />
-                </a>
-                <div className="p-5">
-                    <a>
-                        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                            {element?.Title} {element?.Price ? "- $" + element?.Price : ""}
-                        </h5>
-                    </a>
-                    <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                        {element?.Description}
-                    </p>
-                    <a
-                        className=" cursor-pointer prevent-select inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-yellow-700 dark:hover:bg-yellow-600 dark:focus:ring-blue-800"
-                        onClick={() => {
-                            dispatch(
-                                addToCart({
-                                    id: element.ID,
-                                    price: element.Price,
-                                    description: element.Title,
-                                })
-                            );
-                        }}
-                    >
-                        Add to Cart
-                    </a>
-                </div>
-            </div>
-        </li>
-    ));
-    return (
-        <>
-            {/* <div className="flex flex-col"></div> */}
-            {listItems}
-        </>
-    );
-}

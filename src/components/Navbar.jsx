@@ -12,14 +12,14 @@ const data = require("../public/constants.json");
 export default function Navbar(props) {
     const getMenus = (
         <>
-            <ul className=" font-semibold hidden lg:flex lg:flex-row text-3xl lg:text-xl text-stone-50 select-none">
+            <ul className=" font-semibold hidden lg:flex lg:flex-row text-3xl lg:text-xl text-stone-50 select-none ">
                 {data.Navigation.map((navigation) => {
                     return (
                         <li
-                            className="menu cursor-pointer px-2"
+                            className=" cursor-pointer "
                             key={uuid()}
                         >
-                            <NavLink to={navigation.route}>{navigation.linkName}</NavLink>
+                            <NavLink className=" menu px-2 pt-1 mx-1 pb-2" to={navigation.route}>{navigation.linkName}</NavLink>
                         </li>
                     );
                 })}
