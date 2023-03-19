@@ -1,24 +1,17 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import uuid from "react-uuid";
-import { useSelector, useDispatch } from "react-redux";
 
-import {
-    incrementByAmount,
-    addToCart,
-    decrementFromCart,
-    deleteFromCart,
-    emptyCart,
-} from "../../state/cartSlice";
 
 import { setModal } from "../../state/descriptionModalSlice";
 import { foodDescriptionModal } from "./CartModal";
 
 import "./RenderMenuList.css";
-
 export function RenderList(list) {
+    // disable scrolling if the modal is open
+    document.body.style.overflow = useSelector((state) => state.menuItemModal).isOpen ? "hidden" : "auto";
+    const descriptionModal = useSelector((state) => state.menuItemModal);
     // define cart and dispatch for redux
-    const cart = useSelector((state) => state.cart);
-    // const descriptionModal = useSelector((state) => state.menuItemModal);
     const dispatch = useDispatch();
     const listItems = list.map((element) => (
         <li
@@ -45,27 +38,14 @@ export function RenderList(list) {
                     <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
                         {element?.Description}
                     </p>
-                    {/* <a
-                        className="  cursor-pointer prevent-select inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-yellow-700 dark:hover:bg-yellow-600 dark:focus:ring-blue-800"
-                        onClick={() => {
-                            dispatch(
-                                addToCart({
-                                    id: element.ID,
-                                    price: element.Price,
-                                    description: element.Title,
-                                })
-                            );
-                        }}
-                    >
-                        Add to Cart
-                    </a> */}
                 </div>
             </div>
         </li>
     ));
     return (
         <>
-            {useSelector((state) => state.menuItemModal)?.isOpen && foodDescriptionModal(dispatch)}
+            {useSelector((state) => state.menuItemModal).isOpen &&
+                foodDescriptionModal(dispatch, descriptionModal)}
             {listItems}
         </>
     );
