@@ -1,10 +1,10 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import uuid from "react-uuid";
 import {
-    incrementByAmount,
+    // incrementCartItem,
     addToCart,
-    decrementFromCart,
+    decrementCartItem,
     deleteFromCart,
     emptyCart,
 } from "../state/cartSlice";
@@ -34,6 +34,7 @@ const Sidebar = (props) => {
                     <article className="relative w-screen max-w-lg pb-10 flex flex-col space-y-6 overflow-y-scroll h-full">
                         <div>
                             <div className="pb-2 mt-12 text-xl mx-8">
+                                <div>Your Order</div>
                                 <span>
                                     {cart.map((element) => {
                                         return (
@@ -41,9 +42,41 @@ const Sidebar = (props) => {
                                                 key={uuid()}
                                                 className="flex justify-between "
                                             >
-                                                <div>
-                                                    {element?.quantity} {element?.description}{" "}
-                                                    {element?.price}
+                                                <div className="flex ">
+                                                    <button
+                                                        onClick={() => {
+                                                            dispatch(
+                                                                decrementCartItem({
+                                                                    id: element.id,
+                                                                    price: element.price,
+                                                                    description:
+                                                                        element.description,
+                                                                })
+                                                            );
+                                                        }}
+                                                    >
+                                                        <i className="fa-solid fa-minus"></i>
+                                                    </button>
+                                                    <div className="flex items-center px-4 ">
+                                                        {element?.quantity}
+                                                    </div>
+                                                    <button
+                                                        onClick={() => {
+                                                            dispatch(
+                                                                addToCart({
+                                                                    id: element.id,
+                                                                    price: element.price,
+                                                                    description:
+                                                                        element.description,
+                                                                })
+                                                            );
+                                                        }}
+                                                    >
+                                                        <i className="fa-solid fa-plus"></i>
+                                                    </button>
+                                                    <div className="flex items-center px-8">
+                                                        {element?.description} {element?.price}
+                                                    </div>
                                                 </div>
                                                 <i className="my-1">
                                                     <button
@@ -56,9 +89,7 @@ const Sidebar = (props) => {
                                                         }}
                                                     >
                                                         {/* <i className="px-3 py-1 fa-solid leading-none fa-trash-can border border-solid border-transparent leading-lg" /> */}
-                                                        <i
-                                                            className=" bg-red-400 text-xl rounded-full hover:scale-105 px-3 py-3 fa-solid leading-none fa-trash-can border border-solid border-transparent leading-lg "
-                                                        />
+                                                        <i className=" bg-red-400 text-xl rounded-full hover:scale-105 px-3 py-3 fa-solid leading-none fa-trash-can border border-solid border-transparent leading-lg " />
                                                     </button>
                                                 </i>
                                             </div>

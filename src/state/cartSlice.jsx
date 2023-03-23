@@ -7,9 +7,9 @@ export const cartSlice = createSlice({
     name: "cart",
     initialState,
     reducers: {
-        incrementByAmount: (state, action) => {
-            state.value = action.payload;
-        },
+        // incrementCartItem: (state, action) => {
+        //     this.addToCart(state, action);
+        // },
 
         addToCart: (state, action) => {
             var item = state.filter((element) => element.id === action.payload.id);
@@ -21,12 +21,17 @@ export const cartSlice = createSlice({
             }
         },
 
-        decrementFromCart: (state, action) => {},
+        decrementCartItem: (state, action) => {
+            var item = state.filter((element) => element.id === action.payload.id);
+            if (item.length !== 0 && item[0].quantity > 1) {
+                item[0].quantity -= 1;
+            } else {
+                return deleteFromCartHelper(state, action);
+            }
+        },
 
         deleteFromCart: (state, action) => {
-            return state.filter((element) => {
-                return element.id !== action.payload.id;
-            });
+            return deleteFromCartHelper(state, action);
         },
 
         emptyCart: (state) => {
@@ -35,8 +40,19 @@ export const cartSlice = createSlice({
     },
 });
 
+function deleteFromCartHelper(state, action) {
+    return state.filter((element) => {
+        return element.id !== action.payload.id;
+    });
+}
+
 // Action creators are generated for each case reducer function
-export const { incrementByAmount, addToCart, decrementFromCart, deleteFromCart, emptyCart } =
-    cartSlice.actions;
+export const {
+    // incrementCartItem,
+    addToCart,
+    decrementCartItem,
+    deleteFromCart,
+    emptyCart,
+} = cartSlice.actions;
 
 export default cartSlice.reducer;
