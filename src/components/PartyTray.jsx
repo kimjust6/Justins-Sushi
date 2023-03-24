@@ -1,13 +1,4 @@
 import React from "react";
-import uuid from "react-uuid";
-import { useSelector, useDispatch } from "react-redux";
-import {
-    incrementByAmount,
-    addToCart,
-    decrementFromCart,
-    deleteFromCart,
-    emptyCart,
-} from "../state/cartSlice";
 
 import { RenderList } from "./Shared Components/RenderMenuList";
 

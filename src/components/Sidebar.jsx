@@ -6,7 +6,6 @@ import {
     addToCart,
     decrementCartItem,
     deleteFromCart,
-    emptyCart,
 } from "../state/cartSlice";
 
 import "./Sidebar.css";
@@ -14,6 +13,11 @@ import "./Sidebar.css";
 const Sidebar = (props) => {
     const cart = useSelector((state) => state.cart);
     const dispatch = useDispatch();
+
+    // disable scrolling if the modal is open
+    document.body.style.overflow = props.isCartOpen ? "hidden" : "auto";
+    document.body.style.height = props.isCartOpen ? "100%" : "";
+    document.body.style.margin = props.isCartOpen ? "0" : "";
 
     return (
         <>
