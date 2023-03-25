@@ -63,21 +63,21 @@ export default function Navbar(props) {
                         target="_blank"
                         rel="noreferrer"
                     >
-                        <i className="px-3 py-1 fab leading-none fa-yelp border border-solid border-transparent leading-lg" />
+                        <i className=" hover:text-stone-300 px-3 py-1 fab leading-none fa-yelp border border-solid border-transparent leading-lg" />
                     </a>
                     <a
                         href="https://www.instagram.com/milklatteteas/"
                         target="_blank"
                         rel="noreferrer"
                     >
-                        <i className="px-3 py-1 fab leading-none fa-instagram border border-solid border-transparent leading-lg" />
+                        <i className=" hover:text-stone-300 px-3 py-1 fab leading-none fa-instagram border border-solid border-transparent leading-lg" />
                     </a>
                     <button
                         onClick={() => {
                             props.setIsCartOpen(!props.isCartOpen);
                         }}
                     >
-                        <i className="px-3 py-1 leading-none fas fa-cart-shopping border border-solid border-transparent leading-lg" />
+                        <i className=" hover:text-stone-300 px-3 py-1 leading-none fas fa-cart-shopping border border-solid border-transparent leading-lg" />
                     </button>
                 </div>
             </nav>

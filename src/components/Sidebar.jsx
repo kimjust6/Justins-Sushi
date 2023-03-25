@@ -23,7 +23,7 @@ const Sidebar = (props) => {
         <>
             <main
                 className={
-                    " z-40 fixed overflow-hidden bg-gray-900 bg-opacity-50 inset-0 transform ease-in-out " +
+                    " z-40 fixed overflow-hidden bg-stone-900 bg-opacity-50 inset-0 transform ease-in-out " +
                     (props.isCartOpen
                         ? " transition-opacity opacity-100 duration-300 translate-x-0  "
                         : " transition-all delay-300 opacity-0 translate-x-full  ")
@@ -31,7 +31,7 @@ const Sidebar = (props) => {
             >
                 <section
                     className={
-                        " w-screen max-w-lg right-0 absolute bg-white h-full shadow-xl  duration-300 ease-in-out transition-all transform  " +
+                        " w-screen max-w-lg right-0 absolute bg-stone-900 text-stone-50  h-full shadow-xl  duration-300 ease-in-out transition-all transform  " +
                         (props.isCartOpen ? " translate-x-0 " : " translate-x-full ")
                     }
                 >

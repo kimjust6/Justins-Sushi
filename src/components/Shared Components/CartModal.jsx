@@ -5,15 +5,15 @@ import { clearModal } from "../../state/descriptionModalSlice";
 export const foodDescriptionModal = (dispatch, descriptionModal) => {
     return (
         <div
-            className="relative"
+            className="relative z-40 "
             aria-labelledby="modal-title"
             role="dialog"
             aria-modal="true"
         >
-            <div className=" fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity "></div>
+            <div className=" fixed inset-0 bg-stone-900 bg-opacity-75 transition-opacity "></div>
 
             <div
-                className=" z-40 fixed inset-0 overflow-y-auto cursor-pointer "
+                className=" fixed inset-0 overflow-y-auto cursor-pointer "
                 onClick={() => {
                     dispatch(clearModal());
                 }}
@@ -25,11 +25,11 @@ export const foodDescriptionModal = (dispatch, descriptionModal) => {
                             event.stopPropagation();
                         }}
                     >
-                        <div className="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                        <div className="bg-stone-900 text-stone-50 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                             <div className="sm:flex sm:items-start">
                                 <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
                                     <h3
-                                        className="text-base font-semibold leading-6 text-gray-900"
+                                        className="text-base font-semibold leading-6 text-white"
                                         id="modal-title"
                                     >
                                         {descriptionModal.value.Title}
@@ -42,7 +42,7 @@ export const foodDescriptionModal = (dispatch, descriptionModal) => {
                                 </div>
                             </div>
                         </div>
-                        <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
+                        <div className="bg-stone-900 text-stone-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                             <button
                                 className=" cursor-pointer prevent-select inline-flex items-center ml-3 px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-yellow-700 dark:hover:bg-yellow-600 dark:focus:ring-blue-800"
                                 onClick={() => {
@@ -60,7 +60,7 @@ export const foodDescriptionModal = (dispatch, descriptionModal) => {
                             </button>
                             <button
                                 type="button"
-                                className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
+                                className=" hover:bg-stone-200 mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
                                 onClick={(event) => {
                                     event.stopPropagation();
                                     dispatch(clearModal());
