@@ -9,7 +9,7 @@ const TopMenuNavBar = (props) => {
         return (
             <li
                 key={uuid()}
-                className="text-center cursor-pointer m-2"
+                className="text-center cursor-pointer m-3"
             >
                 <NavLink className="menu text-center px-2 py-1 "
                     to={navbarMenu.route}
@@ -40,8 +40,8 @@ const TopMenuNavBar = (props) => {
                             (props.navbarOpen ? " translate-y-0 " : " -translate-y-full ")
                         }
                     >
-                        <article className=" relative bg-stone-900 w-screen mt-20 pt-2 pb-3 flex flex-col items-center overflow-y-hidden  ">
-                            <ul className="font-semibold text-3xl text-stone-50 select-none ">
+                        <article className=" relative bg-stone-900 w-screen mt-20 flex flex-col items-center overflow-y-hidden  ">
+                            <ul className="font-semibold text-3xl text-stone-50 select-none pb-2 pt-3">
                                 {getMenus}
                             </ul>
                         </article>

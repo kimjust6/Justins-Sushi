@@ -5,7 +5,7 @@ import { clearModal } from "../../state/descriptionModalSlice";
 export const foodDescriptionModal = (dispatch, descriptionModal) => {
     return (
         <div
-            className="relative z-40 "
+            className="relative "
             aria-labelledby="modal-title"
             role="dialog"
             aria-modal="true"
