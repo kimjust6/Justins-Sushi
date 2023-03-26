@@ -23,7 +23,7 @@ const Sidebar = (props) => {
         <>
             <main
                 className={
-                    " z-40 fixed overflow-hidden bg-stone-900 bg-opacity-50 inset-0 transform ease-in-out " +
+                    " z-40 fixed overflow-hidden bg-zinc-900 bg-opacity-50 inset-0 transform ease-in-out " +
                     (props.isCartOpen
                         ? " transition-opacity opacity-100 duration-300 translate-x-0  "
                         : " transition-all delay-300 opacity-0 translate-x-full  ")
@@ -40,65 +40,71 @@ const Sidebar = (props) => {
                             <div className="pb-2 mt-12 text-xl mx-8">
                                 <div>Your Order</div>
                                 <span>
-                                    {cart.map((element) => {
-                                        return (
-                                            <div
-                                                key={uuid()}
-                                                className="flex justify-between "
-                                            >
-                                                <div className="flex ">
-                                                    <button
-                                                        onClick={() => {
-                                                            dispatch(
-                                                                decrementCartItem({
-                                                                    id: element.id,
-                                                                    price: element.price,
-                                                                    description:
-                                                                        element.description,
-                                                                })
-                                                            );
-                                                        }}
+                                    <div className="divide-y text-stone-50">
+                                        <div className="">
+                                            {cart.map((element) => {
+                                                return (
+                                                    <div
+                                                        key={uuid()}
+                                                        className="flex justify-between "
                                                     >
-                                                        <i className="fa-solid fa-minus"></i>
-                                                    </button>
-                                                    <div className="flex items-center px-4 ">
-                                                        {element?.quantity}
+                                                        <div className="flex ">
+                                                            <button
+                                                                onClick={() => {
+                                                                    dispatch(
+                                                                        decrementCartItem({
+                                                                            id: element.id,
+                                                                            price: element.price,
+                                                                            description:
+                                                                                element.description,
+                                                                        })
+                                                                    );
+                                                                }}
+                                                            >
+                                                                <i className="fa-solid fa-minus"></i>
+                                                            </button>
+                                                            <div className="flex items-center px-4 ">
+                                                                {element?.quantity}
+                                                            </div>
+                                                            <button
+                                                                onClick={() => {
+                                                                    dispatch(
+                                                                        addToCart({
+                                                                            id: element.id,
+                                                                            price: element.price,
+                                                                            description:
+                                                                                element.description,
+                                                                        })
+                                                                    );
+                                                                }}
+                                                            >
+                                                                <i className="fa-solid fa-plus"></i>
+                                                            </button>
+                                                            <div className="flex items-center justify-between px-8">
+                                                                <span>{element?.description}</span> <span>{element?.price}</span>
+                                                            </div>
+                                                        </div>
+                                                        <i className="my-1">
+                                                            <button
+                                                                onClick={() => {
+                                                                    dispatch(
+                                                                        deleteFromCart({
+                                                                            id: element.id,
+                                                                        })
+                                                                    );
+                                                                }}
+                                                            >
+                                                                <i className=" bg-red-400 text-xl rounded-full hover:scale-105 px-3 py-3 fa-solid leading-none fa-trash-can border border-solid border-transparent leading-lg " />
+                                                            </button>
+                                                        </i>
                                                     </div>
-                                                    <button
-                                                        onClick={() => {
-                                                            dispatch(
-                                                                addToCart({
-                                                                    id: element.id,
-                                                                    price: element.price,
-                                                                    description:
-                                                                        element.description,
-                                                                })
-                                                            );
-                                                        }}
-                                                    >
-                                                        <i className="fa-solid fa-plus"></i>
-                                                    </button>
-                                                    <div className="flex items-center px-8">
-                                                        {element?.description} {element?.price}
-                                                    </div>
-                                                </div>
-                                                <i className="my-1">
-                                                    <button
-                                                        onClick={() => {
-                                                            dispatch(
-                                                                deleteFromCart({
-                                                                    id: element.id,
-                                                                })
-                                                            );
-                                                        }}
-                                                    >
-                                                        {/* <i className="px-3 py-1 fa-solid leading-none fa-trash-can border border-solid border-transparent leading-lg" /> */}
-                                                        <i className=" bg-red-400 text-xl rounded-full hover:scale-105 px-3 py-3 fa-solid leading-none fa-trash-can border border-solid border-transparent leading-lg " />
-                                                    </button>
-                                                </i>
-                                            </div>
-                                        );
-                                    })}
+                                                );
+                                            })}
+                                        </div>
+                                    </div>
+                                    <div className="">
+                                        Subotal:
+                                    </div>
                                 </span>
                             </div>
                         </div>
