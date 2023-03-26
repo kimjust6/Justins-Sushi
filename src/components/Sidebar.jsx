@@ -11,9 +11,9 @@ import {
 import "./Sidebar.css";
 
 const Sidebar = (props) => {
-    const cart = useSelector((state) => state.cart);
+    const cart = useSelector((state) => state.cart).cartArray;
     const dispatch = useDispatch();
-
+    const subtotal = useSelector((state) => state.cart).subtotal;
     // disable scrolling if the modal is open
     document.body.style.overflow = props.isCartOpen ? "hidden" : "auto";
     document.body.style.height = props.isCartOpen ? "100%" : "";
@@ -25,13 +25,13 @@ const Sidebar = (props) => {
                 className={
                     " z-40 fixed overflow-hidden bg-zinc-900 bg-opacity-50 inset-0 transform ease-in-out " +
                     (props.isCartOpen
-                        ? " transition-opacity opacity-100 duration-300 translate-x-0  "
-                        : " transition-all delay-300 opacity-0 translate-x-full  ")
+                        ? " transition-opacity opacity-100 duration-300 translate-x-0 "
+                        : " transition-all delay-300 opacity-0 translate-x-full ")
                 }
             >
                 <section
                     className={
-                        " w-screen max-w-lg right-0 absolute bg-stone-900 text-stone-50  h-full shadow-xl  duration-300 ease-in-out transition-all transform  " +
+                        " w-screen max-w-lg right-0 absolute bg-stone-900 text-stone-50  h-full shadow-xl duration-300 ease-in-out transition-all transform " +
                         (props.isCartOpen ? " translate-x-0 " : " translate-x-full ")
                     }
                 >
@@ -103,7 +103,7 @@ const Sidebar = (props) => {
                                         </div>
                                     </div>
                                     <div className="">
-                                        Subotal:
+                                        {subtotal != 0 && "Subtotal: $" + subtotal}
                                     </div>
                                 </span>
                             </div>
