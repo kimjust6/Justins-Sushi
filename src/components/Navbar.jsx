@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import uuid from "react-uuid";
 import { useDispatch, useSelector } from "react-redux";
 
+import { setIsCartOpen } from "../state/cartSlice";
 import Sidebar from "./Sidebar";
 import TopMenuNavBar from "./TopMenuBar";
 
@@ -11,6 +12,8 @@ import "./Navbar.css";
 const data = require("../public/constants.json");
 
 export default function Navbar(props) {
+    const dispatch = useDispatch();
+    let isCartOpen = useSelector((state) => state.cart).isOpen;
     const getMenus = (
         <>
             <ul className=" font-semibold hidden lg:flex lg:flex-row text-3xl lg:text-xl text-stone-50 select-none ">
@@ -46,7 +49,7 @@ export default function Navbar(props) {
                 < span
                     className="text-stone-50 leading-none px-4 py-1 rounded bg-transparent lg:hidden outline-none focus:outline-none cursor-pointer"
                     type="button"
-                    onClick={() => props.setNavbarOpen(!props.navbarOpen)}
+                    onClick={() => dispatch(setIsCartOpen(true))}
                 >
                     <i
                         className={
@@ -78,7 +81,7 @@ export default function Navbar(props) {
                     </a>
                     <button
                         onClick={() => {
-                            props.setIsCartOpen(!props.isCartOpen);
+                            dispatch(setIsCartOpen(!isCartOpen));
                         }}
                     >
                         <i className=" hover:text-stone-300 px-3 py-1 leading-none fas fa-cart-shopping border border-solid border-transparent leading-lg" />

@@ -6,6 +6,10 @@ export const cartSlice = createSlice({
     name: "cart",
     initialState,
     reducers: {
+        setIsCartOpen: (state, action) => {
+            state.isOpen = action.payload;
+            console.log(action);
+        },
 
         addToCart: (state, action) => {
             var item = state.cartArray.filter((element) => element.id === action.payload.id);
@@ -54,6 +58,7 @@ function deleteFromCartHelper(state, action) {
 
 // Action creators are generated for each case reducer function
 export const {
+    setIsCartOpen,
     addToCart,
     decrementCartItem,
     deleteFromCart,

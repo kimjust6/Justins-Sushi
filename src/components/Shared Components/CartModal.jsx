@@ -1,4 +1,4 @@
-import { addToCart } from "../../state/cartSlice";
+import { addToCart, setIsCartOpen } from "../../state/cartSlice";
 
 import { clearModal } from "../../state/descriptionModalSlice";
 
@@ -54,6 +54,7 @@ export const foodDescriptionModal = (dispatch, descriptionModal) => {
                                         })
                                     );
                                     dispatch(clearModal());
+                                    dispatch(setIsCartOpen(true))
                                 }}
                             >
                                 Add to Order
