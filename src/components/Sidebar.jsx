@@ -16,9 +16,9 @@ const Sidebar = (props) => {
     const cart = useSelector((state) => state.cart).cartArray;
     const subtotal = useSelector((state) => state.cart).subtotal;
     // disable scrolling if the modal is open
-    document.body.style.overflow = props.isCartOpen ? "hidden" : "auto";
-    document.body.style.height = props.isCartOpen ? "100%" : "";
-    document.body.style.margin = props.isCartOpen ? "0" : "";
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
+    document.body.style.height = isOpen ? "100%" : "";
+    document.body.style.margin = isOpen ? "0" : "";
 
     return (
         <>
@@ -82,7 +82,7 @@ const Sidebar = (props) => {
                                                                 <i className="fa-solid fa-plus"></i>
                                                             </button>
                                                             <div className="flex items-center justify-between px-8">
-                                                                <span>{element?.description}</span> <span>{element?.price}</span>
+                                                                <span>{element?.description}</span> <span> ${element?.price}</span>
                                                             </div>
                                                         </div>
                                                         <i className="my-1">

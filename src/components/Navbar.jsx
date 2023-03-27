@@ -13,7 +13,7 @@ const data = require("../public/constants.json");
 
 export default function Navbar(props) {
     const dispatch = useDispatch();
-    let isCartOpen = useSelector((state) => state.cart).isOpen;
+    const isCartOpen = useSelector((state) => state.cart).isOpen;
     const getMenus = (
         <>
             <ul className=" font-semibold hidden lg:flex lg:flex-row text-3xl lg:text-xl text-stone-50 select-none ">
@@ -33,10 +33,7 @@ export default function Navbar(props) {
 
     return (
         <>
-            <Sidebar
-                isCartOpen={props.isCartOpen}
-                setIsCartOpen={props.setIsCartOpen}
-            />
+            <Sidebar />
             <TopMenuNavBar
                 navbarOpen={props.navbarOpen}
                 setNavbarOpen={props.setNavbarOpen}

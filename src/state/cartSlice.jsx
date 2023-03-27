@@ -8,7 +8,6 @@ export const cartSlice = createSlice({
     reducers: {
         setIsCartOpen: (state, action) => {
             state.isOpen = action.payload;
-            console.log(action);
         },
 
         addToCart: (state, action) => {
