@@ -5,7 +5,6 @@ import uuid from "react-uuid";
 
 import { setModal } from "../../state/descriptionModalSlice";
 
-import { setIsCartOpen } from "../../state/cartSlice";
 import { foodDescriptionModal } from "./CartModal";
 
 import "./RenderMenuList.css";

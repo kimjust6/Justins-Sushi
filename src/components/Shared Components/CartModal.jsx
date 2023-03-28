@@ -44,7 +44,7 @@ export const foodDescriptionModal = (dispatch, descriptionModal) => {
                         </div>
                         <div className="bg-stone-900 text-stone-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                             <button
-                                className=" cursor-pointer prevent-select inline-flex items-center ml-3 px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-yellow-700 dark:hover:bg-yellow-600 dark:focus:ring-blue-800"
+                                className=" cursor-pointer prevent-select inline-flex items-center ml-3 px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-yellow-700 hover:bg-yellow-600  "
                                 onClick={() => {
                                     dispatch(
                                         addToCart({
