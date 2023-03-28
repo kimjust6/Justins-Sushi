@@ -33,7 +33,7 @@ export default function Navbar(props) {
 
     return (
         <>
-            <Sidebar />
+            <Sidebar/>
             <TopMenuNavBar
                 navbarOpen={props.navbarOpen}
                 setNavbarOpen={props.setNavbarOpen}
@@ -46,11 +46,11 @@ export default function Navbar(props) {
                 < span
                     className="text-stone-50 leading-none px-4 py-1 rounded bg-transparent lg:hidden outline-none focus:outline-none cursor-pointer"
                     type="button"
-                    onClick={() => dispatch(setIsCartOpen(true))}
+                    onClick={() => props.setNavbarOpen(true)}
                 >
                     <i
                         className={
-                            props.navbarOpen ? " fa-solid fa-x text-xl" : " fas fa-bars text-xl"
+                            props.navbarOpen ? " fa-solid fa-x text-xl" : " fas fa-bars text-xl "
                         }
                     ></i>
                 </span>
