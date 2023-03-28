@@ -4,6 +4,7 @@ import uuid from "react-uuid";
 
 
 import { setModal } from "../../state/descriptionModalSlice";
+
 import { foodDescriptionModal } from "./CartModal";
 
 import "./RenderMenuList.css";

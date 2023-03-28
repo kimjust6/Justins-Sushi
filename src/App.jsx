@@ -10,13 +10,10 @@ import NotFound from "./components/NotFound";
 import "./App.css";
 
 function App() {
-    const [isCartOpen, setIsCartOpen] = React.useState(false);
     const [navbarOpen, setNavbarOpen] = React.useState(false);
     return (
         <>
             <Navbar
-                isCartOpen={isCartOpen}
-                setIsCartOpen={setIsCartOpen}
                 navbarOpen={navbarOpen}
                 setNavbarOpen={setNavbarOpen}
             />

@@ -1,7 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import uuid from "react-uuid";
+import { useDispatch, useSelector } from "react-redux";
 
+import { setIsCartOpen } from "../state/cartSlice";
 import Sidebar from "./Sidebar";
 import TopMenuNavBar from "./TopMenuBar";
 
@@ -10,6 +12,8 @@ import "./Navbar.css";
 const data = require("../public/constants.json");
 
 export default function Navbar(props) {
+    const dispatch = useDispatch();
+    const isCartOpen = useSelector((state) => state.cart).isOpen;
     const getMenus = (
         <>
             <ul className=" font-semibold hidden lg:flex lg:flex-row text-3xl lg:text-xl text-stone-50 select-none ">
@@ -29,24 +33,24 @@ export default function Navbar(props) {
 
     return (
         <>
-            <Sidebar
-                isCartOpen={props.isCartOpen}
-                setIsCartOpen={props.setIsCartOpen}
-            />
+            <Sidebar/>
             <TopMenuNavBar
                 navbarOpen={props.navbarOpen}
                 setNavbarOpen={props.setNavbarOpen}
             />
-            <nav className=" outline-1 outline outline-stone-400 absolute z-30 w-screen text-md flex items-center justify-between lg:justify-between px-2 lg:px-8 py-5 bg-stone-900 select-none">
+            <nav className={" outline-1 outline outline-stone-400 absolute w-screen text-md flex items-center justify-between lg:justify-between px-2 lg:px-8 py-5 bg-stone-900 select-none "
+                + (useSelector((state) => state.menuItemModal).isOpen ? " z-10 " : "z-30")}
+
+            >
                 {getMenus}
-                <span
+                < span
                     className="text-stone-50 leading-none px-4 py-1 rounded bg-transparent lg:hidden outline-none focus:outline-none cursor-pointer"
                     type="button"
-                    onClick={() => props.setNavbarOpen(!props.navbarOpen)}
+                    onClick={() => props.setNavbarOpen(true)}
                 >
                     <i
                         className={
-                            props.navbarOpen ? " fa-solid fa-x text-xl" : " fas fa-bars text-xl"
+                            props.navbarOpen ? " fa-solid fa-x text-xl" : " fas fa-bars text-xl "
                         }
                     ></i>
                 </span>
@@ -63,21 +67,21 @@ export default function Navbar(props) {
                         target="_blank"
                         rel="noreferrer"
                     >
-                        <i className="px-3 py-1 fab leading-none fa-yelp border border-solid border-transparent leading-lg" />
+                        <i className=" hover:text-stone-300 px-3 py-1 fab leading-none fa-yelp border border-solid border-transparent leading-lg" />
                     </a>
                     <a
                         href="https://www.instagram.com/milklatteteas/"
                         target="_blank"
                         rel="noreferrer"
                     >
-                        <i className="px-3 py-1 fab leading-none fa-instagram border border-solid border-transparent leading-lg" />
+                        <i className=" hover:text-stone-300 px-3 py-1 fab leading-none fa-instagram border border-solid border-transparent leading-lg" />
                     </a>
                     <button
                         onClick={() => {
-                            props.setIsCartOpen(!props.isCartOpen);
+                            dispatch(setIsCartOpen(!isCartOpen));
                         }}
                     >
-                        <i className="px-3 py-1 leading-none fas fa-cart-shopping border border-solid border-transparent leading-lg" />
+                        <i className=" hover:text-stone-300 px-3 py-1 leading-none fas fa-cart-shopping border border-solid border-transparent leading-lg" />
                     </button>
                 </div>
             </nav>

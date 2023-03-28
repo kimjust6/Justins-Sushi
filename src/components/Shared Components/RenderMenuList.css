@@ -9,12 +9,10 @@
 /* lg */
 @media screen and (min-width: 1024px) {
     .menuItemImage {
-        /* background-color: purple; */
         height: 18em;
     }
 
     .menuItemText {
-        /* background-color: pink !important; */
         min-height: 3em;
     }
 }
