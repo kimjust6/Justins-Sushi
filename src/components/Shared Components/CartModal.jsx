@@ -10,10 +10,10 @@ export const foodDescriptionModal = (dispatch, descriptionModal) => {
             role="dialog"
             aria-modal="true"
         >
-            <div className=" fixed inset-0 bg-zinc-900 bg-opacity-50 transition-opacity "></div>
+            <div className=" fixed inset-0 bg-stone-900 bg-opacity-50 transition-opacity "></div>
 
             <div
-                className=" fixed inset-0 overflow-y-auto cursor-pointer "
+                className=" z-40 fixed inset-0 overflow-y-auto cursor-pointer "
                 onClick={() => {
                     dispatch(clearModal());
                 }}
