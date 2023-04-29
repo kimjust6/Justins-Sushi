@@ -1,7 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
 import "./Home.css";
 
 const Home = () => {
+    const navigate = useNavigate();
+    const navigateToMenu = () => {
+        navigate("/menu");
+    };
     return (
         <>
             <div
@@ -17,7 +23,10 @@ const Home = () => {
                             {/* sushi, tray, person at a time */}
                         </div>
                         <div className="flex justify-center">
-                            <button className="outline-4 outline text-sm bg-stone-900 px-3 py-2 rounded-sm outline-stone-900 hover:bg-stone-300 hover:text-stone-900 ease-in-out duration-300 font-bold">
+                            <button
+                                className="outline-4 outline text-sm bg-stone-900 px-3 py-2 rounded-sm outline-stone-900 hover:bg-stone-300 hover:text-stone-900 ease-in-out duration-300 font-bold"
+                                onClick={navigateToMenu}
+                            >
                                 VIEW MENU
                             </button>
                         </div>
