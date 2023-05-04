@@ -5,7 +5,8 @@ const Menu = () => {
     const list = [
         {
             Title: "Hae Dup Bap",
-            Image: "https://i.imgur.com/rSP1qvt.jpg",
+            // Image: "https://i.imgur.com/rSP1qvt.jpg",
+            Image: "https://i.imgur.com/zEJwUHX.jpg",
             Alt: "Menu Item",
             Description:
                 "Assorted raw fish and fresh vegetables on the bed of rice w/ Korean sour and sweet spicy sauce",
@@ -15,7 +16,8 @@ const Menu = () => {
         },
         {
             Title: "Sushi Don",
-            Image: "https://i.imgur.com/gtzTTpt.jpg",
+            // Image: "https://i.imgur.com/gtzTTpt.jpg",
+            Image: "https://i.imgur.com/h3v5Zc2.jpg",
             Alt: "Menu Item",
             Description: "Assorted raw seafood, avocado with special sauce on sushi rice",
             Price: "23",
@@ -24,8 +26,9 @@ const Menu = () => {
         },
         {
             Title: "Chicken Udon in Soup",
-            Image: "https://i.imgur.com/0bIl50n.jpg",
-            Alt: "Menu Item",
+            // Image: "https://i.imgur.com/0bIl50n.jpg",
+            Image: "https://i.imgur.com/NRNqz9i.jpg",
+            Alt: "Menu Item",   
             Description: "Soup udon with chicken, noodles",
             Price: "17",
             Pieces: "",
@@ -33,7 +36,8 @@ const Menu = () => {
         },
         {
             Title: "Tempura Udon",
-            Image: "https://i.imgur.com/SNSwZMO.jpg",
+            // Image: "https://i.imgur.com/SNSwZMO.jpg",
+            Image: "https://i.imgur.com/nMcCVuV.jpg",
             Alt: "Menu Item",
             Description: "2 Shrimp tempura and 4 vegetable in clear fish stock soup with udon",
             Price: "19",
@@ -42,7 +46,8 @@ const Menu = () => {
         },
         {
             Title: "Kalbi Appetizer (6 pieces)",
-            Image: "https://i.imgur.com/01aOa08.jpg",
+            // Image: "https://i.imgur.com/01aOa08.jpg",
+            Image: "https://i.imgur.com/tnD4na6.jpg",
             Alt: "Menu Item",
             Description: "Korean BBQ rips",
             Price: "17",
@@ -51,7 +56,8 @@ const Menu = () => {
         },
         {
             Title: "Kalbi Dinner",
-            Image: "https://i.imgur.com/wMre81b.jpg",
+            // Image: "https://i.imgur.com/wMre81b.jpg",
+            Image: "https://i.imgur.com/mIRWsuX.jpg",
             Alt: "Menu Item",
             Description: "Korean style marinated BBQ beef ribs",
             Price: "35",
@@ -60,7 +66,8 @@ const Menu = () => {
         },
         {
             Title: "Atlantic Salmon Teriyaki Dinner",
-            Image: "https://i.imgur.com/CsYuV1M.jpg",
+            // Image: "https://i.imgur.com/CsYuV1M.jpg",
+            Image: "https://i.imgur.com/uAGvIB2.jpg",
             Alt: "Menu Item",
             Description: "Atlantic salmon grilled with teriyaki sauce",
             Price: "29",
@@ -69,7 +76,8 @@ const Menu = () => {
         },
         {
             Title: "Salmon Sashimi Boat Small",
-            Image: "https://i.imgur.com/Sd70pt3.jpg",
+            // Image: "https://i.imgur.com/Sd70pt3.jpg",
+            Image: "https://i.imgur.com/EWvnkRi.jpg",
             Alt: "Menu Item",
             Description: "Salmon sushi boat",
             Price: "27",
@@ -78,7 +86,8 @@ const Menu = () => {
         },
         {
             Title: "Salmon Sushi Lover Small",
-            Image: "https://i.imgur.com/0S5QH0Y.jpg",
+                // Image: "https://i.imgur.com/0S5QH0Y.jpg",
+                Image: "https://i.imgur.com/OvMRKBs.jpg",
             Alt: "Menu Item",
             Description: "Salmon sushi small",
             Price: "27",
@@ -87,7 +96,8 @@ const Menu = () => {
         },
         {
             Title: "Salmon - Holic Combo",
-            Image: "https://i.imgur.com/kO9G4XY.jpg",
+            // Image: "https://i.imgur.com/kO9G4XY.jpg",
+            Image: "https://i.imgur.com/OnbN28d.jpg",
             Alt: "Menu Item",
             Description:
                 "Soup, salad, 4 pieces salmon sushi, 6 pieces salmon sashimi, 8 pieces super salmon",
