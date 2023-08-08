@@ -23,7 +23,12 @@ export default function Navbar(props) {
                             className=" cursor-pointer "
                             key={uuid()}
                         >
-                            <NavLink className=" menu px-2 pt-1 mx-1 pb-2" to={navigation.route}>{navigation.linkName}</NavLink>
+                            <NavLink
+                                className=" menu px-2 pt-1 mx-1 pb-2"
+                                to={navigation.route}
+                            >
+                                {navigation.linkName}
+                            </NavLink>
                         </li>
                     );
                 })}
@@ -33,20 +38,26 @@ export default function Navbar(props) {
 
     return (
         <>
-            <Sidebar/>
+            <Sidebar />
             <TopMenuNavBar
                 navbarOpen={props.navbarOpen}
                 setNavbarOpen={props.setNavbarOpen}
             />
-            <nav className={" outline-1 outline outline-stone-400 absolute w-screen text-md flex items-center justify-between lg:justify-between px-2 lg:px-8 py-5 bg-stone-900 select-none "
-                + (useSelector((state) => state.menuItemModal).isOpen ? " z-10 " : "z-30")}
-
+            <nav
+                className={
+                    " outline-1 outline outline-stone-400 absolute w-screen text-md flex items-center justify-between lg:justify-between px-2 lg:px-8 py-5 bg-stone-900 select-none " +
+                    (useSelector((state) => state.menuItemModal).isOpen ? " z-10 " : "z-30")
+                }
             >
                 {getMenus}
-                < span
+                <span
                     className="text-stone-50 leading-none px-4 py-1 rounded bg-transparent lg:hidden outline-none focus:outline-none cursor-pointer"
                     type="button"
-                    onClick={() => props.setNavbarOpen(true)}
+                    onClick={() =>
+                        props.setNavbarOpen(() => {
+                            return !props.navbarOpen;
+                        })
+                    }
                 >
                     <i
                         className={

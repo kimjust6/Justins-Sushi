@@ -28,7 +28,7 @@ const Menu = () => {
             Title: "Chicken Udon in Soup",
             // Image: "https://i.imgur.com/0bIl50n.jpg",
             Image: "https://i.imgur.com/NRNqz9i.jpg",
-            Alt: "Menu Item",   
+            Alt: "Menu Item",
             Description: "Soup udon with chicken, noodles",
             Price: "17",
             Pieces: "",
@@ -49,7 +49,7 @@ const Menu = () => {
             // Image: "https://i.imgur.com/01aOa08.jpg",
             Image: "https://i.imgur.com/tnD4na6.jpg",
             Alt: "Menu Item",
-            Description: "Korean BBQ rips",
+            Description: "Korean BBQ Ribs",
             Price: "17",
             Pieces: "",
             ID: "5",
@@ -86,8 +86,8 @@ const Menu = () => {
         },
         {
             Title: "Salmon Sushi Lover Small",
-                // Image: "https://i.imgur.com/0S5QH0Y.jpg",
-                Image: "https://i.imgur.com/OvMRKBs.jpg",
+            // Image: "https://i.imgur.com/0S5QH0Y.jpg",
+            Image: "https://i.imgur.com/OvMRKBs.jpg",
             Alt: "Menu Item",
             Description: "Salmon sushi small",
             Price: "27",
@@ -112,7 +112,7 @@ const Menu = () => {
                 <h2 className="flex justify-center items-center text-4xl font-bold mt-36 py-4 mb-6">
                     Main Menu
                 </h2>
-                <ul className="z-10 flex flex-wrap justify-center items-center">
+                <ul className="z-10 flex flex-wrap justify-center items-center ">
                     {RenderList(list)}
                 </ul>
             </div>
