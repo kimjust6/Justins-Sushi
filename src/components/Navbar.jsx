@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import uuid from "react-uuid";
 import { useDispatch, useSelector } from "react-redux";
@@ -14,14 +14,19 @@ const data = require("../public/constants.json");
 export default function Navbar(props) {
     const dispatch = useDispatch();
     const isCartOpen = useSelector((state) => state.cart).isOpen;
+
+    useEffect(() => {
+        console.log(props.navbarOpen);
+    }, [props.navbarOpen]);
+
     const getMenus = (
         <>
-            <ul className=" font-semibold hidden lg:flex lg:flex-row text-3xl lg:text-xl text-stone-50 select-none ">
+            <ul className=" font-semibold hidden lg:flex lg:flex-row text-xl sm:text-xl text-stone-50 select-none ">
                 {data.Navigation.map((navigation) => {
                     return (
                         <li
                             className=" cursor-pointer "
-                            key={uuid()}
+                            key={navigation.route}
                         >
                             <NavLink
                                 className=" menu px-2 pt-1 mx-1 pb-2"
@@ -37,7 +42,7 @@ export default function Navbar(props) {
     );
 
     return (
-        <>
+        <div className=" ">
             <Sidebar />
             <TopMenuNavBar
                 navbarOpen={props.navbarOpen}
@@ -45,13 +50,12 @@ export default function Navbar(props) {
             />
             <nav
                 className={
-                    " outline-1 outline outline-stone-400 absolute w-screen text-md flex items-center justify-between lg:justify-between px-2 lg:px-8 py-5 bg-stone-900 select-none " +
-                    (useSelector((state) => state.menuItemModal).isOpen ? " z-10 " : "z-30")
+                    " outline-1 outline outline-stone-400  w-screen text-md flex items-center justify-between lg:justify-between px-2 lg:px-8 py-5 bg-stone-900 select-none"
                 }
             >
                 {getMenus}
                 <span
-                    className="text-stone-50 leading-none px-4 py-1 rounded bg-transparent lg:hidden outline-none focus:outline-none cursor-pointer"
+                    className="text-stone-50 leading-none px-4 py-1 rounded bg-transparent lg:hidden outline-none focus:outline-none cursor-pointer z-30 "
                     type="button"
                     onClick={() =>
                         props.setNavbarOpen(() => {
@@ -61,13 +65,18 @@ export default function Navbar(props) {
                 >
                     <i
                         className={
-                            props.navbarOpen ? " fa-solid fa-x text-xl" : " fas fa-bars text-xl "
+                            props.navbarOpen ? " fa-solid fa-x text-2xl" : " fas fa-bars text-2xl "
                         }
                     ></i>
                 </span>
                 <a
                     href="/"
-                    className="font-bold text-5xl text-stone-50 title-hover"
+                    className={`font-bold text-5xl text-stone-50 title-hover transition-all ${
+                        // props.navbarOpen
+                        //     ? "-z-10"
+                        //     : "z-20"
+                        "z-10"
+                    }`}
                 >
                     <span className="outline-1 text-stone-900 title-outline">Justin's </span>
                     <span className="outline-1 text-stone-50 title-solid">Sushi</span>
@@ -96,6 +105,6 @@ export default function Navbar(props) {
                     </button>
                 </div>
             </nav>
-        </>
+        </div>
     );
 }
