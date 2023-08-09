@@ -12,7 +12,7 @@ import "./App.css";
 function App() {
     const [navbarOpen, setNavbarOpen] = React.useState(false);
     return (
-        <>
+        <div className={navbarOpen ? "m-0 h-screen overflow-hidden" : ""}>
             <Navbar
                 navbarOpen={navbarOpen}
                 setNavbarOpen={setNavbarOpen}
@@ -54,7 +54,7 @@ function App() {
                     }
                 ></Route>
             </Routes>
-        </>
+        </div>
     );
 }
 

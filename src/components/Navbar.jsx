@@ -1,29 +1,34 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import uuid from "react-uuid";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
+import { NavLink } from "react-router-dom";
 import { setIsCartOpen } from "../state/cartSlice";
 import Sidebar from "./Sidebar";
 import TopMenuNavBar from "./TopMenuBar";
+import { navbarLinks } from "../constants/data";
 
 import "./Navbar.css";
-
-const data = require("../public/constants.json");
 
 export default function Navbar(props) {
     const dispatch = useDispatch();
     const isCartOpen = useSelector((state) => state.cart).isOpen;
+
+    useEffect(() => {}, []);
+
     const getMenus = (
         <>
-            <ul className=" font-semibold hidden lg:flex lg:flex-row text-3xl lg:text-xl text-stone-50 select-none ">
-                {data.Navigation.map((navigation) => {
+            <ul className=" font-semibold hidden lg:flex text-3xl sm:text-xl text-stone-50 select-none ">
+                {navbarLinks.map((navigation) => {
                     return (
                         <li
                             className=" cursor-pointer "
-                            key={uuid()}
+                            key={navigation.route}
                         >
-                            <NavLink className=" menu px-2 pt-1 mx-1 pb-2" to={navigation.route}>{navigation.linkName}</NavLink>
+                            <NavLink
+                                className=" menu px-2 pt-1 mx-1 pb-2"
+                                to={navigation.route}
+                            >
+                                {navigation.linkName}
+                            </NavLink>
                         </li>
                     );
                 })}
@@ -32,59 +37,69 @@ export default function Navbar(props) {
     );
 
     return (
-        <>
-            <Sidebar/>
+        <div className=" ">
+            <Sidebar />
             <TopMenuNavBar
                 navbarOpen={props.navbarOpen}
                 setNavbarOpen={props.setNavbarOpen}
             />
-            <nav className={" outline-1 outline outline-stone-400 absolute w-screen text-md flex items-center justify-between lg:justify-between px-2 lg:px-8 py-5 bg-stone-900 select-none "
-                + (useSelector((state) => state.menuItemModal).isOpen ? " z-10 " : "z-30")}
-
+            <nav
+                className={
+                    " outline-1 outline outline-stone-400 fixed z-20 w-screen text-md flex items-center justify-between lg:justify-between px-2 lg:px-8 py-3 xl:py-5 bg-stone-900 select-none"
+                }
             >
                 {getMenus}
-                < span
-                    className="text-stone-50 leading-none px-4 py-1 rounded bg-transparent lg:hidden outline-none focus:outline-none cursor-pointer"
+                <span
+                    className="text-stone-50 leading-none px-4 py-1 rounded bg-transparent lg:hidden outline-none focus:outline-none cursor-pointer z-40 "
                     type="button"
-                    onClick={() => props.setNavbarOpen(true)}
+                    onClick={() =>
+                        props.setNavbarOpen(() => {
+                            return !props.navbarOpen;
+                        })
+                    }
                 >
                     <i
                         className={
-                            props.navbarOpen ? " fa-solid fa-x text-xl" : " fas fa-bars text-xl "
+                            props.navbarOpen ? " fa-solid fa-x text-2xl " : " fas fa-bars text-2xl "
                         }
                     ></i>
                 </span>
                 <a
                     href="/"
-                    className="font-bold text-5xl text-stone-50 title-hover"
+                    className={`font-bold text-3xl sm:text-5xl text-stone-50 title-hover text-center transition-all ${
+                        // props.navbarOpen
+                        //     ? "-z-10"
+                        //     : "z-20"
+                        "z-10"
+                    }`}
                 >
                     <span className="outline-1 text-stone-900 title-outline">Justin's </span>
                     <span className="outline-1 text-stone-50 title-solid">Sushi</span>
                 </a>
-                <div className="text-3xl lg:text-xl text-stone-50 flex">
+                <div className="text-xl lg:text-xl text-stone-50 flex">
                     <a
                         href="https://www.yelp.ca/toronto/"
                         target="_blank"
                         rel="noreferrer"
                     >
-                        <i className=" hover:text-stone-300 px-3 py-1 fab leading-none fa-yelp border border-solid border-transparent leading-lg" />
+                        <i className=" hover:text-stone-300 px-2 py-1 sm:px-4 fab leading-none fa-yelp border border-solid border-transparent leading-lg" />
                     </a>
                     <a
                         href="https://www.instagram.com/milklatteteas/"
                         target="_blank"
                         rel="noreferrer"
                     >
-                        <i className=" hover:text-stone-300 px-3 py-1 fab leading-none fa-instagram border border-solid border-transparent leading-lg" />
+                        <i className=" hover:text-stone-300 px-2 py-1 sm:px-4 fab leading-none fa-instagram border border-solid border-transparent leading-lg" />
                     </a>
                     <button
                         onClick={() => {
                             dispatch(setIsCartOpen(!isCartOpen));
                         }}
                     >
-                        <i className=" hover:text-stone-300 px-3 py-1 leading-none fas fa-cart-shopping border border-solid border-transparent leading-lg" />
+                        <i className=" hover:text-stone-300 px-2 py-1 sm:px-4 leading-none fas fa-cart-shopping border border-solid border-transparent leading-lg" />
                     </button>
                 </div>
             </nav>
-        </>
+        </div>
     );
 }
