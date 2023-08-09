@@ -33,7 +33,7 @@ export function RenderList(list) {
                 </div>
                 <div className=" py-3 px-6 lg:min-h-72 ">
                     <div>
-                        <h5 className=" -mb-6 menuItemText text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                        <h5 className=" mb-0 sm:-mb-6 menuItemText text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                             {element?.Title} {element?.Price ? "- $" + element?.Price : ""}
                         </h5>
                     </div>

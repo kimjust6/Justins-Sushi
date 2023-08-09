@@ -27,21 +27,21 @@ const Sidebar = (props) => {
             >
                 <section
                     className={
-                        " w-96 sm:w-lg right-0 absolute bg-stone-900 text-stone-50  h-full shadow-xl duration-300 ease-in-out transition-all transform  w-" +
+                        " w-72 sm:w-[max(22%,26em)] right-0 absolute bg-stone-900 text-stone-50 h-full shadow-xl duration-300 ease-in-out transition-all transform flex justify-center pl-3" +
                         (isOpen ? " translate-x-0 " : " translate-x-full ")
                     }
                 >
-                    <div className=" relative w-96 pb-10 flex flex-col space-y-6 overflow-y-scroll h-full ">
-                        <div className="pb-2 mt-12 text-xl mx-8">
-                            <div>Your Order</div>
-                            <div className=" w-full border-b"></div>
-                            <div className=" divide-y text-stone-50 ">
+                    <div className=" relative w-72 sm:w-[max(20%,25em)]  pb-10 flex flex-col space-y-6 overflow-y-scroll h-full items-center">
+                        <div className="pb-2 mt-12 text-sm md:text-md w-[calc(100%-1em)]">
+                            <h1 className="text-xl">Your Order</h1>
+                            <div className=" w-full border-b "></div>
+                            <div className=" divide-y text-stone-50 pr-6 ">
                                 <div className="">
                                     {cart.map((element) => {
                                         return (
                                             <div
                                                 key={uuid()}
-                                                className=" flex justify-between pt-4"
+                                                className=" flex justify-between pt-4 w-full "
                                             >
                                                 <div className="flex w-full">
                                                     <button
@@ -102,9 +102,9 @@ const Sidebar = (props) => {
                                 </div>
                             </div>
                             {subtotal !== 0 && (
-                                <div className="w-full border-t  mt-4 py-4 flex justify-between">
+                                <div className="w-full border-t  mt-4 py-4 flex justify-between text-lg ">
                                     {"Subtotal: $" + subtotal}
-                                    <button className="cursor-pointer prevent-select inline-flex items-center ml-3 px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-yellow-700 hover:bg-yellow-600 ">
+                                    <button className="mr-6 cursor-pointer prevent-select inline-flex items-center ml-3 px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-yellow-700 hover:bg-yellow-600 ">
                                         Checkout
                                     </button>
                                 </div>
