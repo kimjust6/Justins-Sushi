@@ -71,7 +71,7 @@ export default function Navbar(props) {
                 </span>
                 <a
                     href="/"
-                    className={`font-bold text-5xl text-stone-50 title-hover transition-all ${
+                    className={`font-bold text-6xl text-stone-50 title-hover transition-all ${
                         // props.navbarOpen
                         //     ? "-z-10"
                         //     : "z-20"
