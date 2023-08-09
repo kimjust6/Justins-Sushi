@@ -1,10 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { navbarLinks } from "../constants/data";
 
-const data = require("../public/constants.json");
 
 const TopMenuNavBar = (props) => {
-    const getMenus = data.Navigation.map((navbarMenu) => {
+    const getMenus = navbarLinks.map((navbarMenu) => {
         return (
             <li
                 key={navbarMenu.route}

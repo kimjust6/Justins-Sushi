@@ -1,28 +1,23 @@
 import React, { useEffect } from "react";
-import { NavLink } from "react-router-dom";
-import uuid from "react-uuid";
 import { useDispatch, useSelector } from "react-redux";
-
+import { NavLink } from "react-router-dom";
 import { setIsCartOpen } from "../state/cartSlice";
 import Sidebar from "./Sidebar";
 import TopMenuNavBar from "./TopMenuBar";
+import { navbarLinks } from "../constants/data";
 
 import "./Navbar.css";
-
-const data = require("../public/constants.json");
 
 export default function Navbar(props) {
     const dispatch = useDispatch();
     const isCartOpen = useSelector((state) => state.cart).isOpen;
 
-    useEffect(() => {
-        console.log(props.navbarOpen);
-    }, [props.navbarOpen]);
+    useEffect(() => {}, []);
 
     const getMenus = (
         <>
-            <ul className=" font-semibold hidden lg:flex  text-3xl sm:text-xl text-stone-50 select-none ">
-                {data.Navigation.map((navigation) => {
+            <ul className=" font-semibold hidden lg:flex text-3xl sm:text-xl text-stone-50 select-none ">
+                {navbarLinks.map((navigation) => {
                     return (
                         <li
                             className=" cursor-pointer "

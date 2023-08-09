@@ -1,6 +1,0 @@
-{
-    "Navigation": [
-        { "linkName": "Menu", "route": "/menu" },
-        { "linkName": "Party Tray", "route": "/partytrays" }
-    ]
-}
