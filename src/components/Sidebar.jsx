@@ -31,7 +31,7 @@ const Sidebar = (props) => {
                         (isOpen ? " translate-x-0 " : " translate-x-full ")
                     }
                 >
-                    <div className=" relative w-72 sm:w-[max(20%,25em)]  pb-10 flex flex-col space-y-6 overflow-y-scroll h-full items-center">
+                    <div className=" relative w-72 sm:w-[max(20%,25em)]  pb-10 flex flex-col space-y-6 h-full items-center">
                         <div className="pb-2 mt-12 text-sm md:text-md w-[calc(100%-1em)]">
                             <h1 className="text-xl">Your Order</h1>
                             <div className=" w-full border-b "></div>
